@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #45BF55;
+    padding: 25px 10px;
+    color: white;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 50px;
+    margin-right: 80px;
+    margin-left: 30px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-grow: 1;
+    padding-left: 40px;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-list li {
+    position: relative;
+    display: inline;
+}
+
+.nav-list li a,
+.nav-list li button {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 3px;
+}
+
+.nav-list li a:hover,
+.nav-list li button:hover {
+    background-color: #AAD1D9;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 200px; 
+    z-index: 1000;
+}
+
+.dropdown-menu li a {
+    padding: 10px;
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #AAD1D9;
+}
+
+.search-bar form {
+    display: flex;
+}
+
+.search-bar input[type="text"] {
+    padding: 5px;
+    border: none;
+    border-radius: 3px 0 0 3px;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #AAD1D9;
+    color: white;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #AAD1D9;
+}
+
+
+.menu-toggle {
+    display: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}

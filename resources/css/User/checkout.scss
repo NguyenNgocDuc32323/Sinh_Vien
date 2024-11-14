@@ -1,0 +1,316 @@
+.page-section {
+    &.section {
+        margin-top: 100px;
+        margin-bottom: 60px;
+
+        @media (max-width: 576px) {
+            margin-top: 70px;
+            margin-bottom: 30px;
+        }
+    }
+}
+.bg-light {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.checkout-item {
+    p {
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        font-family: "Montserrat", sans-serif;
+        color: #333;
+    }
+}
+.card {
+    &.shadow-0 {
+        box-shadow: none;
+    }
+
+    &.border {
+        border: 1px solid #ddd;
+    }
+
+    .card-title {
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+
+        &.fw-bold {
+            font-weight: 700;
+        }
+
+        font-size: 24px;
+    }
+}
+.cart-summary {
+    width: 100%;
+    .summary-title {
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        font-size: 24px;
+    }
+    .summary-item {
+        p {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            font-family: "Montserrat", sans-serif;
+            color: #333;
+        }
+    }
+    .pd-10 {
+        padding: 10px 0;
+    }
+    #prd-checkout-block {
+        .checkout-block-item {
+            position: relative;
+            .btn-remove-cart {
+                background-color: transparent;
+                border: none;
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                i {
+                    color: #333;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        .back-shop {
+            p {
+                margin-bottom: 10px;
+                font-size: 1.2rem;
+                font-weight: 500;
+                font-family: "Montserrat", sans-serif;
+                color: #333;
+            }
+            .btn-back{
+                color: #fff;
+                padding: 10px 25px;
+                font-weight: 600;
+                text-decoration: none;
+                font-family: "Montserrat", sans-serif;
+                background-color: #45bf55;
+                border: none;
+                &:hover {
+                    background-color: #fff;
+                    color: #45bf55;
+                    border: 1px solid #45bf55;
+                }
+            }
+        }
+    }
+    .container .h8 {
+        font-size: 30px;
+        font-weight: 800;
+        text-align: center;
+    }
+    .btn.btn-primary {
+        margin-top: 2rem;
+        width: 100%;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 15px;
+        border: none;
+        transition: 0.5s;
+        background-size: 200% auto;
+        background-color: #45bf55;
+        text-align: center;
+        &:hover {
+            color: #45bf55;
+            text-decoration: none;
+            background-color: #fff;
+            border: 1px solid #45bf55;
+        }
+    }
+    .btn-cancle{
+        margin-top: 2rem;
+        width: 100%;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 15px;
+        border: none;
+        transition: 0.5s;
+        background-size: 200% auto;
+        background-color: #ffc142;
+        color: #fff;
+        &:hover {
+            color: #ffc142;
+            text-decoration: none;
+            background-color: #fff;
+            border: 1px solid #ffc142;
+        }
+    }
+    .form-control {
+        color: #333;
+        background-color: transparent;
+        border: 2px solid transparent;
+        height: 60px;
+        padding-left: 20px;
+        vertical-align: middle;
+        border: 1px solid #eee;
+        &:focus {
+            color: #333;
+            border: 1px solid #eee;
+            box-shadow: none;
+        }
+    }
+
+    .text {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    ::placeholder {
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .payment-methods {
+        margin-top: 3rem;
+        h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .form-check {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+
+            .form-check-input {
+                width: 1rem;
+                height: 1rem;
+                margin-right: 0.5rem;
+                accent-color: #45bf55;
+            }
+
+            .form-check-label {
+                font-size: 1rem;
+                color: #333;
+                cursor: pointer;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: #45bf55;
+                }
+            }
+        }
+    }
+    .card-block {
+        margin-top: 2rem;
+    }
+}
+.form-outline {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select {
+        &.form-control {
+            border-radius: 0;
+            border: 1px solid #ddd;
+            padding: 0.75rem 1rem;
+        }
+        &.form-control:focus {
+            border-color: #868e96;
+            box-shadow: none;
+            outline: none;
+        }
+    }
+
+    textarea.form-control {
+        border-radius: 0;
+        border: 1px solid #ddd;
+        padding: 0.75rem 1rem;
+    }
+}
+
+.form-check {
+    &.form-check-input {
+        margin-right: 0.5rem;
+    }
+
+    .form-check-label {
+        margin-left: 0.5rem;
+    }
+
+    .form-check-label[for="flexCheckDefault1"] {
+        margin-left: 0;
+    }
+}
+
+.border {
+    border-radius: 0.375rem;
+    padding: 1.25rem;
+}
+
+.form-select {
+    border-radius: 0.375rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+}
+
+.float-end {
+    float: right;
+}
+.price {
+    &.text-muted {
+        color: #6c757d;
+    }
+}
+
+.badge-secondary {
+    background-color: #6c757d;
+}
+
+.img-sm {
+    border-radius: 0.375rem;
+    border: 1px solid #ddd;
+    height: 96px;
+    width: 96px;
+}
+.float-end {
+    .btn-cancel {
+        background-color: #ffc142;
+        color: #fff;
+        padding: 10px 25px;
+        text-decoration: none;
+        &:hover {
+            background-color: #fff;
+            color: #ffc142;
+            border: 2px solid #ffc142;
+            text-decoration: none;
+            span {
+                color: #ffc142;
+            }
+        }
+        span {
+            color: #fff;
+        }
+    }
+    .btn-continue {
+        background-color: #45bf55;
+        color: #fff;
+        padding: 10px 25px;
+        border: 2px solid transparent;
+        transition: background-color 0.3s, color 0.3s, border 0.3s;
+
+        &:hover {
+            background-color: #fff;
+            color: #45bf55;
+            border: 2px solid #45bf55;
+        }
+
+        &.disabled {
+            background-color: #ccc;
+            color: #999;
+            border-color: #999;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+    }
+}

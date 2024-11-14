@@ -1,0 +1,39 @@
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #28a745; /* Nền xanh lá */
+    transition: opacity 0.75s, visibility 0.75s;
+    z-index: 9999999999999;
+}
+
+
+
+.loading::after {
+    content: '';
+    width: 75px;
+    height: 75px;
+    border: 15px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: loading 1s ease-in-out infinite;
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0turn);
+    }
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+.loading-hidden {
+    opacity: 0;
+    visibility: hidden;
+}

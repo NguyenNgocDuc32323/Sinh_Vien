@@ -1,0 +1,29 @@
+
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "toastr/build/toastr.min.css";
+@import './login.scss';
+@import './Admin/admin.scss';
+@import './User/user.scss';
+@import './sidebar.scss';
+@import './navbar.scss';
+@import './User/shop.scss';
+@import './User/wishlist.scss';
+@import './User/user-profile.scss';
+@import './User/product-detail.scss';
+@import './about.css';
+@import './User/cart.scss';
+@import './User/ads.css';
+@import './User/checkout.scss';
+@import './loading.scss';
+@import './User/blog.scss';
+@import './contact.css';
+@import './footer.css';
+body{
+    font-family: Lato, sans-serif;
+}
+.toast-top-center {
+    padding-top: 15px;
+    position: fixed;
+    background-color: #fff;
+    height: 6rem;
+}
