@@ -1,0 +1,104 @@
+.footer-section{
+        padding-top: 150px;
+        color: white;
+        position: relative;
+        background-color: rgb(113, 3, 16);
+        padding-bottom: 50px;
+    .footer-top{
+        position: absolute;
+        top: -15%;
+        z-index: 1;
+        max-width: 1320px;
+        .contact {
+            border-radius: 4px;
+            background-color: #222;
+            margin: 0;
+            padding: 0;
+            border-radius: 30px;
+            height: 167px;
+            .contact-boder,.contact-border-left {
+                height: 70%;
+                img {
+                    margin-top: 20px;
+                    object-fit: scale-down;
+                    width: 30px;
+                    height: 40px;
+                }
+                p {
+                    padding-top: 12px;
+                    color: rgba(255, 255, 255, 0.7) !important;
+                    margin: 0 33px;
+                    text-align: center;
+                    font-size: 14px;
+                    word-break: break-word;
+                    font-family: 'Roboto Condensed', sans-serif;
+                    text-transform: none;
+                    a {
+                        color: rgba(255, 255, 255, 0.7);
+                        margin: 0px;
+                        text-align: center;
+                        font-size: 14px;
+                        word-break: break-word;
+                        font-family: 'Roboto Condensed', sans-serif;
+                        text-transform: none;
+                        text-decoration: none;
+                    }
+                }
+            }
+            .contact-boder{
+                border-left: 1px solid #e2e2e2;
+                position: relative;
+                padding-left: 21px;
+                height: 70%;
+                &::before{
+                    left: 3px;
+                    content: '';
+                    position: absolute;
+                    height: calc(100% - 50px);
+                    width: 1px;
+                    background-color: #e2e2e2;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                &:after{
+                    left: -5px;
+                    content: '';
+                    position: absolute;
+                    height: calc(100% - 50px);
+                    width: 1px;
+                    background-color: #e2e2e2;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+    .footer-logo{
+        img {
+            width: 100px;
+            height: auto;
+        }
+        .tentruong {
+            padding-top: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        .tentruong-eng {
+            font-size: 16pxs;
+            text-transform: uppercase;
+            padding: 0;
+            margin: 0;
+        }
+    }
+    .school-infor{
+        text-align: center;
+        margin-top: 30px;
+        .text-black{
+            color: #222;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+}

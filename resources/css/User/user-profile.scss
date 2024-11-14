@@ -4,7 +4,7 @@
         margin-block-end: 1.5rem !important;
         border-bottom: 1px solid #fff;
         .body-title{
-            color: #45BF55;
+            color: #c41313;
             font-weight: 700;
             font-size: 2.5rem;
             padding: 1rem;
@@ -15,7 +15,7 @@
             li{
                 a{
                     text-decoration: none;
-                    color: #45BF55;
+                    color: #c41313;
                     font-size: 1.5rem;
                 }
                 a:hover{
@@ -36,7 +36,7 @@
             margin: 1rem 0;
 
             .card-block {
-                border: 2px solid #45BF55 !important;
+                border: 2px solid #c41313 !important;
                 height: 100% !important;
                 box-shadow: none !important;
                 background-color: #fff;
@@ -46,7 +46,7 @@
                         color: #3c4043;
                         font-weight: 600;
                         .card-body-name-span{
-                            color: #45BF55;
+                            color: #c41313;
                             font-weight: 700;
                         }
                     }
@@ -74,7 +74,7 @@
                             width: 3.125rem !important;
                             border-radius: 50% !important;
                             color: #fff;
-                            background-color: #45BF55;
+                            background-color: #c41313;
                             i {
                                 font-size: 1.75rem;
                             }
@@ -85,9 +85,9 @@
                         margin-block-start: 0.75rem !important;
                         color: inherit !important;
 
-                        .text-success-main { color: #45BF55 !important; font-size: 1.3rem; }
+                        .text-success-main { color: #c41313 !important; font-size: 1.3rem; }
                         .text-danger-main { color: #FFC142 !important; font-size: 1.3rem; }
-                        .text-neutral-main { color: #45BF55 !important; font-size: 1.5rem; }
+                        .text-neutral-main { color: #c41313 !important; font-size: 1.5rem; }
                     }
                 }
 
@@ -117,7 +117,7 @@
 
                 .card-title {
                     font-size: 2.2rem;
-                    color: #45BF55;
+                    color: #c41313;
                     margin-bottom: 1.5rem;
                     padding: 0.5rem 0;
                     font-weight: 700;
@@ -236,7 +236,7 @@
 
                     .card-title {
                         font-size: 2.2rem;
-                        color: #45BF55;
+                        color: #c41313;
                         margin-bottom: 1.5rem;
                         border-bottom: 2px solid #ddd;
                         padding-bottom: 0.5rem;
@@ -291,13 +291,13 @@
                 .card-body{
                     .card-body-item{
                         .btn-add{
-                            background-color: #45BF55;
+                            background-color: #c41313;
                             color: #fff;
                             &:hover{
                                 background-color: #fff;
-                                border: 1px solid #45BF55;
+                                border: 1px solid #c41313;
                                 span{
-                                    color: #45BF55;
+                                    color: #c41313;
                                 }
                             }
                         }
@@ -313,7 +313,7 @@
                                 border: none;
                                 &:hover{
                                     i{
-                                        color: #45BF55;
+                                        color: #c41313;
                                     }
                                 }
                             }
@@ -348,7 +348,7 @@
                                                 margin-right: 10px;
                                             }
                                             .btn-update{
-                                                background-color: #45BF55;
+                                                background-color: #c41313;
                                                 color: #fff;
                                             }
                                             .btn-delete{
@@ -357,7 +357,7 @@
                                             }
                                         }
                                         .table-user-name{
-                                            color: #45BF55;
+                                            color: #c41313;
                                         }
                                     }
 
@@ -376,8 +376,8 @@
                                             width: 3rem;
                                             height: 3rem;
                                             border-radius: 50%;
-                                            color: #45BF55;
-                                            border: 1px solid #45BF55;
+                                            color: #c41313;
+                                            border: 1px solid #c41313;
                                             text-align: center;
                                             font-size: 1.25rem;
                                             line-height: 1.5;
@@ -387,14 +387,14 @@
                                             }
 
                                             &:hover {
-                                                background-color: #45BF55;
+                                                background-color: #c41313;
                                                 color: #fff;
                                             }
                                         }
 
                                         &.active {
                                             .page-link {
-                                                background-color: #45BF55;
+                                                background-color: #c41313;
                                                 color: #fff;
                                             }
                                         }
@@ -410,8 +410,8 @@
 
                             .nav-link {
                                 color: #fff;
-                                background-color: #45BF55;
-                                border: 1px solid #45BF55;
+                                background-color: #c41313;
+                                border: 1px solid #c41313;
                                 border-radius: 0.25rem;
                                 padding: 0.5rem 1rem;
                                 transition: background-color 0.3s, color 0.3s;
@@ -422,8 +422,8 @@
                             }
                             .nav-link.active {
                                 background-color: #fff;
-                                color: #45BF55;
-                                border-color: #45BF55;
+                                color: #c41313;
+                                border-color: #c41313;
                             }
                         }
                     }
@@ -479,7 +479,7 @@
                                     cursor: pointer;
                                     &:hover{
                                         i{
-                                            color: #45BF55;
+                                            color: #c41313;
                                             transition: color 0.3s;
                                         }
                                     }
@@ -547,14 +547,14 @@
         }
         .media-block{
             a{
-                color: #45BF55;
+                color: #c41313;
                 font-size: 1.3rem;
                 margin: 0 0.3rem;
             }
         }
         .infor-block{
             a{
-                color: #45BF55;
+                color: #c41313;
                 font-size: 1.3rem;
                 margin: 0 0.3rem;
             }
@@ -568,5 +568,5 @@
   }
 
   .gradient-custom {
-    background: #45BF55;
+    background: #c41313;
   }

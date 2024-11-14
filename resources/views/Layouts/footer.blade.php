@@ -1,65 +1,61 @@
 <footer class="footer-section mt-100">
-    <!-- Section: Social media -->
-    <section class="social-media d-flex justify-content-between p-4">
-        <!-- Left -->
-        <div class="me-5">
-            <span>Get connected with us on social networks:</span>
-        </div>
-        <!-- Right -->
-        <div>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-google"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-        </div>
-    </section>
-    <!-- Section: Links  -->
-    <section>
-        <div class="container text-center text-md-start mt-5">
-            <div class="row mt-3">
-                <!-- Grid column -->
-                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto footer-title mb-4">
-                    <h6>Polysite Company</h6>
-                    <hr class="mb-4"/>
-                    <p>Polysite Bottle Company offers premium bottles and packaging for cosmetics, food, and pharmaceuticals, focusing on quality and sustainability.</p>
-                </div>
-                <!-- Grid column -->
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto footer-title mb-4">
-                    <h6>Products</h6>
-                    <hr class="mb-4"/>
-                    <p><a href="{{route('shop')}}">Shop</a></p>
-                    <p><a href="{{ route('shop-filter-category', ['category' => 'PET']) }}">PET Bottles</a></p>
-                    <p><a href="{{ route('shop-filter-category', ['category' => 'PP']) }}">PP Bottles</a></p>
-                    <p><a href="{{ route('shop-filter-category', ['category' => 'PC']) }}">PC Bottles</a></p>
-                </div>
-                <!-- Grid column -->
-                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto footer-title mb-4">
-                    <h6>Pages Links</h6>
-                    <hr class="mb-4"/>
-                    <p><a href="{{route('home')}}">Home Page</a></p>
-                    <p><a href="{{route('shop')}}">Shop</a></p>
-                    <p><a href="{{route('blog')}}">Blog</a></p>
-                    <p><a href="{{route('contact')}}">Contact Us</a></p>
-                    <p><a href="{{route('ads')}}">Ads</a></p>
-                </div>
-                <!-- Grid column -->
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto footer-title mb-md-0 mb-4 contact">
-                    <h6>Contact Information</h6>
-                    <hr class="mb-4"/>
-                    <p><i class="fas fa-home mr-3"></i> 185,Doi Can,Ba Dinh,Ha Noi,Viet Nam</p>
-                    <p><i class="fas fa-envelope mr-3"></i> polysite@gmail.com</p>
-                    <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                    <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12 text-center footer-logo">
+                <img src="https://media.dau.edu.vn/Media/1_TH1057/Images/logo-dhktdn-copy.png" width="70px" height="70px"><br>
+                <p class="tentruong">trường đại học kiến trúc đà nẵng</p>
+                <p class="tentruong-eng">danang architecture university</p>
+            </div>
+            <div class="col-md-12 col-sm-12 school-infor">
+                <p class="text-black">Địa Chỉ : 566 Núi Thành, P. Hòa Cường Nam, Q. Hải Châu, TP. Đà Nẵng</p>
+                <p class="text-black">Đường Dây Nóng : 0816988288</p>
+                <p>Copy Right : 2020 TRƯỜNG ĐẠI HỌC KIẾN TRÚC ĐÀ NẴNG</p>
+            </div>
+            <div class="col-12 footer-top">
+                <div class="row contact">
+                    <div class="col-md-3 col-6 text-center text-center-mobile p-3">
+                        <div class="contact-border-left">
+                            <img src="{{asset('images/Dashboard/map-marker-alt.png')}}">
+                            <p>
+                                <a href="{{route('home')}}">
+                                    566 Núi Thành, P. Hòa Cường Nam, Q. Hải Châu, TP. Đà Nẵng
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 text-center text-center-mobile p-3">
+                        <div class="contact-boder">
+                            <img src="{{asset('images/Dashboard/mobile.png')}}">
+                            <p>
+                                <a href="{{route('home')}}" title="0816988288">
+                                    0816988288
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 text-center text-center-mobile p-3">
+                        <div class="contact-boder">
+                            <img src="{{asset('images/Dashboard/envelope.png')}}">
+                            <p>
+                                <a href="{{route('home')}}" title="info@dau.edu.vn">
+                                    info@dau.edu.vn
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 text-center text-center-mobile p-3">
+                        <div class="contact-boder">
+                            <img src="{{asset('images/Dashboard/facebook-f.png')}}">
+                            <p>
+                                <a href="{{route('home')}}" title="DaihocKientrucDanang">
+                                    DaihocKientrucDanang
+                                </a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Copyright -->
-    <div class="copyright">
-        © 2024 Copyright:
-        <a href="{{route('contact')}}">polysite.com</a>
     </div>
 </footer>
 
@@ -78,16 +74,17 @@
 {{-- loading --}}
 <script>
     window.addEventListener('load', function() {
-    const loading = document.querySelector('#loading');
-    if (loading) {
-        loading.classList.add('loading-hidden');
-        loading.addEventListener('transitionend', function() {
-            if (loading.parentNode === document.body) {
-                document.body.removeChild(loading);
-            }
-        });
-    }
-});
+        const loading = document.querySelector('#loading');
+        if (loading) {
+            loading.classList.add('loading-hidden');
+            loading.addEventListener('transitionend', function() {
+                if (loading.parentNode === document.body) {
+                    document.body.removeChild(loading);
+                }
+            });
+        }
+    });
 </script>
 </body>
+
 </html>

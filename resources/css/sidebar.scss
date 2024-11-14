@@ -5,7 +5,7 @@
         margin-bottom: 20px;
         .filter-btn {
             align-items: center;
-            background-color: #45BF55;
+            background-color: #c41313;
             border-radius: 0;
             color: #fff;
             display: inline-block;
@@ -43,7 +43,7 @@
                         margin-right: 5px;
                     }
                     &:hover{
-                        color: #45BF55;
+                        color: #c41313;
                     }
 
                 }
@@ -60,9 +60,9 @@
                     text-transform: uppercase;
                     letter-spacing: .03em;
                     &:hover{
-                        color: #45BF55;
+                        color: #c41313;
                         &::after{
-                            color: #45BF55;
+                            color: #c41313;
                         }
 
                     }
@@ -105,7 +105,7 @@
                                     padding: 15px 0;
                                     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                                     &:hover{
-                                        color: #45BF55;
+                                        color: #c41313;
                                     }
                                 }
                             }
@@ -139,8 +139,8 @@
                                 width: 1em;
                             }
                             .form-check-input:checked {
-                                background-color: #45BF55;
-                                border-color: #45BF55;
+                                background-color: #c41313;
+                                border-color: #c41313;
                             }
                             .form-check-input:focus {
                                 box-shadow: none;
@@ -153,15 +153,15 @@
                                 width: 14px;
                             }
                             .filter{
-                                background-color: #45BF55;
+                                background-color: #c41313;
                                 border-radius: 5px;
                                 color: #fff;
                                 border: none;
                                 padding: 5px 30px;
                                 &:hover{
                                     background-color: #fff;
-                                    color: #45BF55;
-                                    border: 1px solid #45BF55;
+                                    color: #c41313;
+                                    border: 1px solid #c41313;
                                 }
                             }
                         }
@@ -211,7 +211,7 @@
                             -webkit-appearance: none;
                             width: 100%;
                             height: 8px;
-                            background: linear-gradient(to right, #45BF55 var(--value, 0%), #fff var(--value, 0%));
+                            background: linear-gradient(to right, #c41313 var(--value, 0%), #fff var(--value, 0%));
                             border-radius: 5px;
                             outline: none;
                             opacity: 0.7;
@@ -225,7 +225,7 @@
                                 width: 20px;
                                 height: 20px;
                                 border-radius: 50%;
-                                background: #45BF55;
+                                background: #c41313;
                                 cursor: pointer;
                             }
 
@@ -233,7 +233,7 @@
                                 width: 20px;
                                 height: 20px;
                                 border-radius: 50%;
-                                background: #45BF55;
+                                background: #c41313;
                                 cursor: pointer;
                             }
                         }
@@ -245,7 +245,7 @@
                             display: flex;
                             justify-content: space-between;
                             font-size: 1rem;
-                            color: #45BF55;
+                            color: #c41313;
                             .marker {
                               position: relative;
                             }
@@ -261,15 +261,15 @@
                     }
                     .custom-control{
                         .filter{
-                            background-color: #45BF55;
+                            background-color: #c41313;
                             border-radius: 5px;
                             color: #fff;
                             border: none;
                             padding: 5px 30px;
                             &:hover{
                                 background-color: #fff;
-                                color: #45BF55;
-                                border: 1px solid #45BF55;
+                                color: #c41313;
+                                border: 1px solid #c41313;
                             }
                         }
                     }
@@ -290,7 +290,7 @@
             font-weight: 700;
             padding: 10px 0;
             text-transform: uppercase;
-            color: #45BF55;
+            color: #c41313;
             font-size: 1.5rem;
             text-align: center;
         }
@@ -334,7 +334,7 @@
                         }
                         &:hover{
                             h6{
-                                color: #45BF55;
+                                color: #c41313;
                                 font-weight: 700;
                             }
                         }

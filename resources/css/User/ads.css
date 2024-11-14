@@ -100,7 +100,7 @@ ul.cart-inner-info li {
     letter-spacing: 3px;
 }
 .top-info i {
-    color: #45bf55;
+    color: #c41313;
 }
 /*-- //header --*/
 
@@ -267,14 +267,14 @@ a.animated-button:visited:hover:after {
 }
 
 a.animated-button.gibson-three {
-    background-color: #45bf55;
-	border: 2px solid #45bf55;
+    background-color: #c41313;
+	border: 2px solid #c41313;
 	color: #fff !important;
 }
 a.animated-button.gibson-three:hover{
     background-color: #fff;
-    border: 2px solid #45bf55;
-    color: #45bf55 !important;
+    border: 2px solid #c41313;
+    color: #c41313 !important;
 }
 
 .login label {
@@ -288,7 +288,7 @@ a.animated-button.gibson-three:hover{
 
 .login button.btn.btn-primary.submit {
     box-shadow: 2px 2px #54575a;
-    background: #45bf55;
+    background: #c41313;
     padding: 0.5em 2em;
     letter-spacing: 1px;
     border: none;
@@ -428,7 +428,7 @@ figure.effect-lexi h3 {
     color: #fff;
 }
 figure.effect-lexi h3 span {
-    color: #45bf55;
+    color: #c41313;
 }
 
 figure.effect-lexi p {
@@ -468,7 +468,7 @@ figure.effect-lexi:hover p {
 }
 .mail-grid-text-info h3 {
     font-size: 0.9em;
-    color: #45bf55;
+    color: #c41313;
     margin: 0em 0 0.5em;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -558,7 +558,7 @@ button.close {
     outline: none;
 }
 .modal-body h6 {
-    color: #45bf55;
+    color: #c41313;
     font-size: 1.1em;
     letter-spacing: 1px;
 }
@@ -573,7 +573,7 @@ button.close {
     font-size: 1.2em;
 }
 .login.newsletter a:hover {
-    color: #45bf55;
+    color: #c41313;
 }
 ul.agile_top_section li {
     display: inline-block;
@@ -832,7 +832,7 @@ ul.social-icons li a i.fab.fa-google-plus-g:hover {
 .customer-info h6 {
     font-size: 1em;
     margin: 1em 0;
-    color: #45bf55;
+    color: #c41313;
 }
 .customer-info ul.social-icons li a i {
     color: #202223;
@@ -1150,7 +1150,7 @@ ul.short li {
 }
 
 ul.short li a {
-    color: #45bf55;
+    color: #c41313;
 }
 
 /*-- /error --*/
@@ -1173,7 +1173,7 @@ a.b-home {
 }
 
 a.b-home:hover {
-    background: #45bf55;
+    background: #c41313;
     letter-spacing: 1px;
 }
 
@@ -1219,7 +1219,7 @@ a.b-home:hover {
     cursor: pointer;
 }
 .error_page button.btn1:hover {
-    background: #45bf55;
+    background: #c41313;
 }
 .error_page form {
     margin: 0 auto;
@@ -1253,7 +1253,7 @@ h3.tittle-w3layouts.two{
 .testimonials_grid label {
     font-size: 1em;
     letter-spacing: 1px;
-    color: #45bf55;
+    color: #c41313;
 }
 .testimonials_grid h3 span {
     font-weight: 100;
@@ -1295,7 +1295,7 @@ a.carousel-control-next.test, a.carousel-control-prev.test {
     color: #333!important;
 }
 .footer-top-w3layouts-grid-sec:hover .mail-grid-icon i {
-    color: #45bf55;
+    color: #c41313;
 }
 /*--footer--*/
 
@@ -1328,7 +1328,7 @@ footer {
 	font-weight: 300;
 	font-size: 1.2em;
 	line-height: 1.9;
-	color: #45bf55;
+	color: #c41313;
 }
 
 .copyright-w3layouts {
@@ -1372,7 +1372,7 @@ footer {
 }
 
 .footer-text button.btn1 {
-	color: #45bf55;
+	color: #c41313;
 	border: none;
 	padding: 10px 0;
 	outline: none;
@@ -1456,13 +1456,13 @@ ul.links li a:hover {
     font-size: 15px;
 }
 .footer-social li a:hover {
-    color: #45bf55;
+    color: #c41313;
 }
 
 /*--//social-icons--*/
 
 .copyright-w3layouts a {
-    color: #45bf55;
+    color: #c41313;
 }
 
 /*--//footer--*/

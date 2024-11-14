@@ -35,7 +35,7 @@
                             margin-bottom: 20px;
 
                             .btn-theme {
-                                background: #45BF55;
+                                background: #c41313;
                                 border: none;
                                 color: #fff;
                             }
@@ -51,14 +51,14 @@
                                 border-radius: 50px;
                             }
                             input{
-                                color: #45BF55;
+                                color: #c41313;
                             }
                             input::placeholder {
-                                color: #45BF55;
+                                color: #c41313;
                             }
                             span{
                                 i:hover{
-                                    color: #45BF55;
+                                    color: #c41313;
                                 }
                             }
                         }
@@ -122,8 +122,8 @@
 
                             .checkbox-theme {
                                 input[type="checkbox"]:checked + label::before {
-                                    background-color: #45BF55;
-                                    border-color: #45BF55;
+                                    background-color: #c41313;
+                                    border-color: #c41313;
                                 }
 
                                 input[type=checkbox]:checked + label:before {
@@ -145,7 +145,7 @@
                                 text-decoration: none;
                             }
                             a:hover{
-                                color: #45BF55;
+                                color: #c41313;
                             }
                         }
 
@@ -166,7 +166,7 @@
                                 font-family: 'Jost', sans-serif;
                             }
                             a:hover{
-                                color: #45BF55;
+                                color: #c41313;
 
                             }
                         }
@@ -213,7 +213,7 @@
                             margin-right: 2px;
                             letter-spacing: 0.5px;
                             font-weight: 400;
-                            color: #45BF55;
+                            color: #c41313;
                             font-family: 'Jost', sans-serif;
                         }
 
@@ -222,7 +222,7 @@
                         }
 
                         .active {
-                            background: #45BF55;
+                            background: #c41313;
                             color: #fff;
                         }
                     }
@@ -236,7 +236,7 @@
                         font-family: 'Jost', sans-serif;
 
                         span {
-                            color: #45BF55;
+                            color: #c41313;
                             font-weight: 700;
                             font-size: 2.7rem;
                         }
