@@ -25,9 +25,9 @@ class ResetPasswordController extends Controller
         if ($user) {
             $user->password = Hash::make($validatedData['password']);
             $user->save();
-            return redirect()->route('login')->with('success', 'Updated password successfully!');
+            return redirect()->route('login')->with('success', 'Đã cập nhật mật khẩu thành công!');
         }
-        return redirect()->back()->with('error', 'Password update failed!');
+        return redirect()->back()->with('error', 'Cập nhật mật khẩu không thành công!');
     }
 
 }

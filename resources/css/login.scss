@@ -4,6 +4,7 @@
     .login {
         background: #eef1f6;
         .container-fluid {
+            overflow: hidden;
             .form-section {
                 min-height: 100vh;
                 position: relative;
@@ -234,15 +235,17 @@
                         font-weight: 600;
                         text-transform: uppercase;
                         font-family: 'Jost', sans-serif;
-
+                        width: 700px;
                         span {
                             color: #c41313;
                             font-weight: 700;
                             font-size: 2.7rem;
+                            
                         }
                     }
 
                     p {
+                        width: 650px;
                         color: #fff;
                         margin-bottom: 20px;
                         line-height: 28px;

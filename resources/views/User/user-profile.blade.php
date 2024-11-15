@@ -25,17 +25,17 @@
               <div class="card custom-card">
                 <div class="row g-0">
                   <div class="col-md-4 gradient-custom text-center text-white custom-gradient-column">
-                    <img src="{{asset($logged_user->avatar)}}" alt="avatar" class="img-fluid my-5" style="width: 80px;">
-                    <h5>{{$logged_user->username}}</h5>
-                    <a href="{{route('user-profile-edit',$logged_user->id)}}">
+                    <img src="{{asset($user->avatar)}}" alt="avatar" class="img-fluid my-5" style="width: 80px;">
+                    <h5>{{$user->username}}</h5>
+                    <a href="{{route('user-profile-edit',$user->id)}}">
                         <i class="far fa-edit mb-5"></i>
                     </a>
                   </div>
                   <div class="col-md-8">
                     <div class="card-body p-4">
                         <div class="d-flex align-items-center infor-block">
-                            <h6>Information</h6>
-                            <a href="{{route('user-profile-edit',$logged_user->id)}}" class="ms-auto">
+                            <h6>Thông Tin</h6>
+                            <a href="{{route('user-profile-edit',$user->id)}}" class="ms-auto">
                               <i class="far fa-edit mb-5"></i>
                             </a>
                           </div>
@@ -43,16 +43,16 @@
                       <div class="row pt-1">
                         <div class="col-6 mb-3">
                           <h6>Email</h6>
-                          <p class="text-muted">{{$logged_user->email}}</p>
+                          <p class="text-muted">{{$user->email}}</p>
                         </div>
                         <div class="col-6 mb-3">
-                          <h6>Phone</h6>
-                          <p class="text-muted">{{$logged_user->phone}}</p>
+                          <h6>Số Điện Thoại</h6>
+                          <p class="text-muted">{{$user->phone}}</p>
                         </div>
                       </div>
                       <div class="col-6 mb-3">
-                        <h6>Address</h6>
-                        <p class="text-muted">{{$logged_user->address}}</p>
+                        <h6>Địa Chỉ</h6>
+                        <p class="text-muted">{{$user->address}}</p>
                       </div>
                       <hr class="mt-0 mb-4">
                       <div class="d-flex justify-content-start media-block">

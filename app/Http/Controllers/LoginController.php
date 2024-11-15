@@ -17,7 +17,6 @@ class LoginController extends Controller
 
     public function login(Request $request)
 {
-    // Validate input
     $validator = Validator::make($request->all(), [
         'email' => 'required|email',
         'password' => 'required|min:8',
@@ -28,14 +27,16 @@ class LoginController extends Controller
                     ->withErrors($validator)
                     ->withInput();
     }
+
     $email = $request->input('email');
     $password = $request->input('password');
     $remember = $request->has('remember');
     $user = User::where('email', $email)->first();
 
     if (!$user || !Hash::check($password, $user->password)) {
-        return back()->with('error', 'Email or password is incorrect!');
+        return back()->with('error', 'Email hoặc mật khẩu không đúng!');
     }
+
     User::whereNotNull('remember_token')->update(['remember_token' => null]);
 
     if ($remember) {
@@ -48,15 +49,17 @@ class LoginController extends Controller
         $user->save();
         Cookie::queue(Cookie::forget('remember_token'));
     }
+
     Auth::login($user, $remember);
 
-
-    return redirect()->route('home')->with('success', 'Login successfully!');
+    if ($user->role === 'student') {
+        return redirect()->route('student-index', ['id' => $user->id])->with('success', 'Đăng nhập thành công!');
+    } elseif ($user->role === 'teacher') {
+        return redirect()->route('teacher-index', ['id' => $user->id])->with('success', 'Đăng nhập thành công!');
+    } elseif ($user->role === 'admin') {
+        return redirect()->route('admin')->with('success', 'Đăng nhập thành công!');
     }
 
-
-
-
-
-
+    return redirect()->route('student-index', ['id' => $user->id])->with('success', 'Đăng nhập thành công!');
+    }
 }

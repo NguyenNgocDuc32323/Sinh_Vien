@@ -1,23 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\Admin\User;
+namespace App\Http\Controllers\Student;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
-
-class UpdateUserController extends Controller
+class StudentController extends Controller
 {
-    public function updateInfor($id){
-        $user = User::findOrFail($id);
-        return view('Admin.update-user',[
-            'user' => $user
-        ]);
+    public function index(){
+        $logged_user = $this->logedInUser();
+        $user = auth()->user();
+        return view('Student.student-index',compact('logged_user', 'user'));
+    }
+    public function logedInUser(){
+        $user = auth()->user();
+        return $user;
     }
     public function updateInforPost($id, Request $request)
 {
@@ -33,7 +34,7 @@ class UpdateUserController extends Controller
     }
     $user = User::findOrFail($id);
     if (!$user) {
-        return redirect()->back()->with('error', 'Không tìm thấy người dùng.');
+        return redirect()->back()->with('error', 'User not found.');
     }
     $user->username = $request->input('name');
     $user->email = $request->input('email');
@@ -43,8 +44,6 @@ class UpdateUserController extends Controller
         $fileName = str::random(10);
         $extension = $request->file('avatar')->getClientOriginalExtension();
         $storedImage = $fileName . '.' . $extension;
-
-        // Store the file in the desired directory within storage
         $request->file('avatar')->storeAs('public/images/Admin/Manage-User', $storedImage);
         $sourcePath = storage_path('app/public/images/Admin/Manage-User/' . $storedImage);
         $destinationPath = public_path('images/Admin/Manage-User/' . $storedImage);
@@ -53,14 +52,13 @@ class UpdateUserController extends Controller
     }
     $check_update = $user->save();
     if ($check_update) {
-        return redirect()->route('manage-user')->with('success', 'Cập nhật thông tin người dùng thành công!');
+        return redirect()->route('user-profile',compact('id'))->with('success', 'Update information successfully!');
     } else {
-        return redirect()->back()->with('error', 'Cập nhật thông tin người dùng không thành công!');
+        return redirect()->back()->with('error', 'Update user information failed!');
     }
     }
-    public function updatePassword($id, Request $request)
+    public function updatePasswordPost($id, Request $request)
     {
-        // Validate the input data
         $validator = Validator::make($request->all(), [
             'current-password' => 'required',
             'new-password' => 'required|string|min:8|confirmed',
@@ -74,16 +72,27 @@ class UpdateUserController extends Controller
         if (!$user) {
             return redirect()->back()->with('error', 'Không tìm thấy người dùng.');
         }
-
-        // Check if current password matches
         if (!Hash::check($request->input('current-password'), $user->password)) {
             return redirect()->back()->with('error', 'Mật khẩu hiện tại không đúng.');
         }
-
-        // Update the password
         $user->password = Hash::make($request->input('new-password'));
         $user->save();
 
-        return redirect()->route('manage-user')->with('success', 'Đã cập nhật mật khẩu thành công!');
+        return redirect()->route('user-profile',compact('id'))->with('success', 'Đã cập nhật mật khẩu thành công!');
     }
+    public function student_profile($id){
+        $user = User::find($id); // Sử dụng find() để lấy một bản ghi theo id
+        if (!$user) {
+            return redirect()->back()->with('error', 'User không tồn tại!');
+        }
+        return view('User.user-profile', compact('user')); // Đưa tên biến vào compact
+    }
+    public function edit($student_id){
+        $user = User::find($student_id);
+        if (!$user) {
+            return redirect()->back()->with('error', 'User không tồn tại!');
+        }
+        return view('User.user-update', compact('user'));
+    }
+    
 }

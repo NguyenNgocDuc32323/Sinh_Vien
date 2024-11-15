@@ -56,7 +56,7 @@
     }
 
     .sidebar-logo {
-        padding: 0.5rem 3rem;
+        padding: 0.5rem 4.5rem;
         border-inline-end: 1px solid #ebecef;
         border-block-end: 1px solid #ebecef;
         display: flex;
@@ -139,6 +139,14 @@
 }
 .sidebar.active {
     width: auto;
+    .sidebar-logo{
+        display: flex;
+        justify-content: center;
+        img{
+            margin: 15px;
+        }
+    }
+    
 }
 .dashboard-main {
     position: fixed;
@@ -703,7 +711,7 @@
                                                             color: #fff;
                                                         }
                                                         .btn-confirm{
-                                                            background-color: #dc3545;
+                                                            background-color: #c41313;
                                                             color: #fff;
                                                         }
                                                     }
@@ -791,7 +799,7 @@
                                             transition: background-color 0.3s, color 0.3s;
 
                                             &:hover {
-                                                background-color: #5aaf5e;
+                                                background-color: #c41313;
                                             }
                                         }
                                         .nav-link.active {
@@ -819,11 +827,11 @@
                                             }
 
                                             .text-danger-login {
-                                                color: #dc3545;
+                                                color: #c41313;
                                                 font-size: 0.875rem;
                                             }
 
-                                            button.btn-success {
+                                            button.btn-update-user {
                                                 font-size: 1rem;
                                                 padding: 0.75rem 1.5rem;
                                                 border-radius: 0.25rem;
@@ -858,7 +866,7 @@
                                                 }
                                             }
                                             .text-danger-login {
-                                                color: #dc3545;
+                                                color: #c41313;
                                                 font-size: 1.2rem;
                                             }
                                         }
@@ -895,11 +903,11 @@
                                     }
 
                                     .text-danger-login {
-                                        color: #dc3545;
+                                        color: #c41313;
                                         font-size: 0.875rem;
                                     }
 
-                                    button.btn-success {
+                                    button.btn-update-user {
                                         font-size: 1rem;
                                         padding: 0.75rem 1.5rem;
                                         border-radius: 0.25rem;
@@ -921,7 +929,7 @@
                                         }
                                     }
                                     .text-danger-login {
-                                        color: #dc3545;
+                                        color: #c41313;
                                         font-size: 1.2rem;
                                     }
                                     .btn-add-prd{

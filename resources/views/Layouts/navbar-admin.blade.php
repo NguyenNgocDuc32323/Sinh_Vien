@@ -21,19 +21,19 @@
             <div class="dropdown-menu to-top dropdown-menu-sm">
                 <div class="drop-header d-flex align-items-center justify-content-between">
                     <div>
-                        <h6 class="drop-user-name">{{$user->username}}</h6>
+                        <h6 class="drop-user-name">{{$user->name}}</h6>
                         <span class="drop-user-role">{{$user->role}}</span>
                     </div>
                 </div>
                 <ul class="to-top-list">
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="view-profile.html">
-                            <i class="icon-user-item fa-regular fa-user"></i> <span>My Profile</span>
+                        <a class="dropdown-item d-flex align-items-center" href="{{route('home')}}">
+                            <i class="icon-user-item fa-regular fa-user"></i> <span>Trang Người Dùng</span>
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}">
-                            <i class="icon-user-item fa-solid fa-power-off"></i><span>Log Out</span>
+                            <i class="icon-user-item fa-solid fa-power-off"></i><span>Đăng Xuất</span>
                         </a>
                     </li>
                 </ul>

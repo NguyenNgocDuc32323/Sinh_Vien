@@ -65,12 +65,12 @@ class ManageUserController extends Controller
         if ($user) {
             $check_delete = $user->delete();
             if ($check_delete) {
-                return redirect()->route('manage-user')->with('success', 'Delete user successfully!');
+                return redirect()->route('manage-user')->with('success', 'Xóa người dùng thành công!');
             } else {
-                return redirect()->route('manage-user')->with('error', 'Delete user failed!');
+                return redirect()->route('manage-user')->with('error', 'Xóa người dùng không thành công!');
             }
         } else {
-            return redirect()->back()->with('error', 'User not found!');
+            return redirect()->back()->with('error', 'Không tìm thấy người dùng!');
         }
     }
 }

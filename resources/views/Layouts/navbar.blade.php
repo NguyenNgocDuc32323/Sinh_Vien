@@ -26,11 +26,14 @@
                                     <div class="user-infor">
                                         <a href="{{ route('logout') }}" class="btn btn-index ms-2">Đăng Xuất</a>
                                         @if($user->role == 'admin')
-                                        <a href="{{ route('admin') }}" class="btn btn-index bd-logout ms-2">Trang Quản Trị</a>
+                                        <a href="{{ route('admin') }}" class="btn btn-index bd-logout ms-2">Quản Trị</a>
+                                        @elseif($user->role == 'student' || $user->role == 'teacher')
+                                        <a href="{{ route('student-profile', ['id' => $user->id]) }}" class="btn btn-index bd-logout ms-2">Trang Cá Nhân</a>
                                         @endif
                                     </div>
                                     @endguest
                                 </div>
+
 
                             </div>
                             <div class="logo">

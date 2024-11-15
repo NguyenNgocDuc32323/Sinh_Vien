@@ -24,7 +24,7 @@
                 <li class="fw-medium">
                     <a href="{{ route('home') }}" class="d-flex align-items-center gap-1 hover-text-primary">
                         <i class="fa-solid fa-house"></i>
-                        Dashboard
+                        Trang Chủ
                     </a>
                 </li>
             </ul>
@@ -37,11 +37,11 @@
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link active" id="profile-tab" data-bs-toggle="tab" href="#profile"
-                                    role="tab" aria-controls="profile" aria-selected="true">Profile</a>
+                                    role="tab" aria-controls="profile" aria-selected="true">Thông Tin Cá Nhân</a>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link" id="password-tab" data-bs-toggle="tab" href="#password" role="tab"
-                                    aria-controls="password" aria-selected="false">Change Password</a>
+                                    aria-controls="password" aria-selected="false">Đổi Mật Khẩu</a>
                             </li>
                         </ul>
                         <!-- Tab Content -->
@@ -51,7 +51,7 @@
                                 <form action="{{route('user-profile-edit-post',$user->id)}}" method="POST" enctype="multipart/form-data" class="w-50 mx-auto">
                                     @csrf
                                     <div class="form-group mb-3">
-                                        <label for="name">Name</label>
+                                        <label for="name">Họ Và Tên</label>
                                         <input type="text" class="form-control" id="name" name="name" value="{{$user->username}}">
                                         @if ($errors->has('name'))
                                             <span class='text-danger-login'>{{ $errors->first('name') }}</span>
@@ -65,14 +65,14 @@
                                         @endif
                                     </div>
                                     <div class="form-group mb-3">
-                                        <label for="phone">Phone</label>
+                                        <label for="phone">Số Điện Thoại</label>
                                         <input type="text" class="form-control" id="phone" name="phone" value="{{$user->phone}}">
                                         @if ($errors->has('phone'))
                                             <span class='text-danger-login'>{{ $errors->first('phone') }}</span>
                                         @endif
                                     </div>
                                     <div class="form-group mb-3">
-                                        <label for="address">Address</label>
+                                        <label for="address">Địa Chỉ</label>
                                         <input type="text" class="form-control" id="address" name="address" value="{{$user->address}}">
                                         @if ($errors->has('address'))
                                             <span class='text-danger-login'>{{ $errors->first('address') }}</span>
@@ -80,7 +80,7 @@
                                     </div>
                                     <div class="form-group mb-3">
                                         <div class="d-flex">
-                                            <label for="avatar">Current Avatar</label>
+                                            <label for="avatar">Ảnh Đại Diện</label>
                                             <img src="{{asset($user->avatar)}}" alt="" class="current-user-image">
                                         </div>
                                         <input type="file" class="form-control mt-3" id="avatar" name="avatar">
@@ -89,7 +89,7 @@
                                         @endif
                                     </div>
                                     <div class="form-group mb-3">
-                                        <button type="submit" class="btn btn-success">Update Profile</button>
+                                        <button type="submit" class="btn btn-update-user">Chỉnh Sửa Thông Tin</button>
                                     </div>
                                 </form>
                             </div>
@@ -98,7 +98,7 @@
                                 <form action="{{route('user-edit-password-post',$user->id)}}" method="POST" class="w-50 mx-auto">
                                     @csrf
                                     <div class="form-group mb-3 position-relative">
-                                        <label for="current-password">Current Password</label>
+                                        <label for="current-password">Mật Khẩu Hiện Tại</label>
                                         <input type="password" class="form-control" id="current-password" name="current-password">
                                         <span class="show-pass-word">
                                             <i class="fa fa-eye"></i>
@@ -108,7 +108,7 @@
                                         @endif
                                     </div>
                                     <div class="form-group mb-3 position-relative">
-                                        <label for="new-password">New Password</label>
+                                        <label for="new-password">Mật Khẩu Mới</label>
                                         <input type="password" class="form-control" id="new-password" name="new-password">
                                         <span class="show-pass-word">
                                             <i class="fa fa-eye"></i>
@@ -118,7 +118,7 @@
                                         @endif
                                     </div>
                                     <div class="form-group mb-3 position-relative">
-                                        <label for="confirm-password">Confirm Password</label>
+                                        <label for="confirm-password">Xác Nhận Mật Khẩu</label>
                                         <input type="password" class="form-control" id="confirm-password" name="new-password_confirmation">
                                         <span class="show-pass-word">
                                             <i class="fa fa-eye"></i>
@@ -128,7 +128,7 @@
                                         @endif
                                     </div>
                                     <div class="form-group mb-3">
-                                        <button type="submit" class="btn btn-success">Change Password</button>
+                                        <button type="submit" class="btn btn-update-user">Thay Đổi Mật Khẩu</button>
                                     </div>
                                 </form>
                             </div>

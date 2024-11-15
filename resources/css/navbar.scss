@@ -58,7 +58,7 @@
                 }
                 .bd-logout{
                     border-left: 1px solid #fff;
-                    width: 145px;
+                    width: 210px;
                 }
                 .logo{
                     position: absolute;
@@ -205,4 +205,10 @@
         padding-left: 30px !important;
         padding-right: 30px !important;
     }
+}
+.user-infor{
+    top: 0;
+    right: -100px;
+    position: absolute;
+    display: flex;
 }

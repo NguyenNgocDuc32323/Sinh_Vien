@@ -144,7 +144,7 @@
                                 </div>
                             </div>
                             <div class="form-group mb-3">
-                                <button type="submit" class="btn btn-success badge btn-add-prd">Create Product</button>
+                                <button type="submit" class="btn btn-update-user badge btn-add-prd">Create Product</button>
                             </div>
                         </form>
                     </div>

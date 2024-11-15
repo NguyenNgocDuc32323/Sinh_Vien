@@ -4,4 +4,4 @@
         @include('layouts.main')
     </div>
 </div>
-@include('Layouts.footer')
+@include('Layouts.footer-login')

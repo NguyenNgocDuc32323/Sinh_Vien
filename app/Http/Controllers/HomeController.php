@@ -44,7 +44,7 @@ class HomeController extends Controller
 
     return response()->json([
         'uploaded' => 0,
-        'error' => ['message' => 'No file uploaded or file size too large.']
+        'error' => ['message' => 'Không có tệp nào được tải lên hoặc kích thước tệp quá lớn.']
     ]);
     }
 }

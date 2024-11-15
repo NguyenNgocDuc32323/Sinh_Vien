@@ -30,7 +30,7 @@ class RegisterController extends Controller
         }
         $existingUser = User::where('email', $request->email)->first();
         if ($existingUser) {
-            return back()->with('error', 'Account already exists!');
+            return back()->with('error', 'Tài khoản đã tồn tại!');
         }
         $user = new User();
         $user->username = $request->username;
@@ -40,7 +40,7 @@ class RegisterController extends Controller
         $user->address = $request->address;
         $user->avatar = 'images/Admin/user.png';
         $user->save();
-        return redirect('login')->with('success', 'Registration successful!');
+        return redirect('login')->with('success', 'Đăng ký thành công!');
     }
 
 

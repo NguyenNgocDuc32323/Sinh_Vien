@@ -24,19 +24,19 @@
                     <div class="login-inner-form">
                         <div class="details">
                             <a href="{{route('home')}}">
-                                <img src="{{asset('images/Login/logo_login.png')}}" alt="logo">
+                                <img src="{{asset('images/logo.png')}}" alt="logo">
                             </a>
-                            <h3>Reset Your Account Password</h3>
+                            <h3>Đặt Lại Mật Khẩu</h3>
                             <form method="POST" action="{{ route('reset-password-post') }}" autocomplete="off">
                                 @csrf
                                 <div class="form-group form-box">
-                                    <input type="email" name="email" class="form-control" placeholder="Email Address" required autocomplete="email" value="{{$email}}">
+                                    <input type="email" name="email" class="form-control" placeholder="Email" required autocomplete="email" value="{{$email}}">
                                 </div>
                                 @if ($errors->has('email'))
                                     <span class='text-danger-login'>{{ $errors->first('email') }}</span>
                                 @endif
                                 <div class="form-group form-box position-relative">
-                                    <input type="password" name="password" class="form-control" autocomplete="off" placeholder="New Password" required>
+                                    <input type="password" name="password" class="form-control" autocomplete="off" placeholder="Mật Khẩu Mới" required>
                                     <span class="position-absolute top-50 end-0 translate-middle-y me-3 cursor-pointer toggle-password" style="z-index: 10;">
                                         <i class="fa fa-eye"></i>
                                     </span>
@@ -45,7 +45,7 @@
                                     <span class='text-danger-login'>{{ $errors->first('password') }}</span>
                                 @endif
                                 <div class="form-group form-box position-relative">
-                                    <input type="password" name="confirm_password" class="form-control" autocomplete="off" placeholder="Confirm Password" required>
+                                    <input type="password" name="confirm_password" class="form-control" autocomplete="off" placeholder="Xác Nhận Mật Khẩu" required>
                                     <span class="position-absolute top-50 end-0 translate-middle-y me-3 cursor-pointer toggle-password" style="z-index: 10;">
                                         <i class="fa fa-eye"></i>
                                     </span>
@@ -54,9 +54,8 @@
                                     <span class='text-danger-login'>{{ $errors->first('confirm_password') }}</span>
                                 @endif
                                 <div class="form-group">
-                                    <button type="submit" class="btn-md btn-theme w-100">Reset Password</button>
+                                    <button type="submit" class="btn-md btn-theme w-100">Cập Nhật Mật Khẩu</button>
                                 </div>
-                                <p>Don't have an account?<a href="{{ route('register') }}"> Register here</a></p>
                             </form>
                         </div>
                     </div>
@@ -64,12 +63,11 @@
                 <div class="col-lg-6 col-md-12 bg-img">
                     <div class="information">
                         <div class="btn-section">
-                            <a href="{{route('forgot-password')}}" class="active link-btn">Reset Password</a>
-                            <a href="{{route('login')}}" class="link-btn">Login</a>
-                            <a href="{{route('register')}}" class="link-btn">Register</a>
+                            <a href="{{ route('login') }}" class="active link-btn">Đăng Nhập</a>
+                            <a href="{{ route('home') }}" class="link-btn">Trang Chủ</a>
                         </div>
-                        <h1>Welcome To <span>Polysite</span></h1>
-                        <p>Polysite is a leading producer of plastic bottles and packaging, serving the food, pharmaceutical, and cosmetic industries. With over 20 years of experience, Polysite is committed to innovation and delivering high-quality packaging solutions to meet customer needs.</p>
+                        <h1><span>Đại Học Kiến Trúc Đà Nẵng</span></h1>
+                        <p>Trường Đại học Kiến trúc Đà Nẵng (DAU) là trường đại học tư thục uy tín, chuyên đào tạo các ngành kiến trúc, xây dựng và thiết kế. Với hơn 15 năm kinh nghiệm, DAU cam kết cung cấp môi trường học tập chất lượng và phát triển nguồn nhân lực đáp ứng nhu cầu xã hội.</p>
                         <div class="social-list">
                             <a href="#" class="facebook-bg">
                                 <i class="fa-brands fa-facebook"></i>

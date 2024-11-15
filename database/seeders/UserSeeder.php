@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
     {
         User::create([
             'password' => Hash::make('password'),
-            'role' => 'student',
+            'role' => 'admin',
             'name' => 'Nguyễn Ngọc Đức',
             'email' => 'nguyenngocduc@gmail.com',
             'avatar' => 'images/Dashboard/student.webp',
@@ -39,7 +39,7 @@ class UserSeeder extends Seeder
         ]);
         User::create([
             'password' => Hash::make('password'),
-            'role' => 'admin',
+            'role' => 'student',
             'name' => 'Nguyễn Quang Trung',
             'email' => 'nguyenquangtrung@gmail.com',
             'avatar' => 'images/Dashboard/admin.png',

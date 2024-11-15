@@ -1,0 +1,165 @@
+@extends('Layouts.master-teacher')
+@section('page_title')
+Hồ Sơ Giáo Viên
+@endsection
+@section('content')
+@if(session('success'))
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    toastr.success('{{ session('
+      success ') }}');
+  });
+</script>
+@endif
+@if(session('error'))
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    toastr.error('{{ session('
+      error ') }}');
+  });
+</script>
+@endif
+<div id="demo_2">
+  <section_1 class="m-5">
+    <div class="row">
+      <div class="col-8">
+        <div class="studentDetailContainer frameWork p-4">
+          <div class="row">
+            <div class="col-12">
+              <div
+                class="titleContainer d-flex align-items-center justify-content-between">
+                <div class="titleMark p-2">Thông Tin Giáo Viên</div>
+                <div class="moreDetails p-2"><a>Xem chi
+                    tiết</a></div>
+              </div>
+            </div>
+            <div class="col-3 p-3">
+              <div class="avatarContainer">
+                <img
+                  src="{{asset('images/Dashboard/teacher.webp')}}"
+                  class="avatar" alt>
+              </div>
+
+            </div>
+            <div class="col-8 p-3">
+              <div class="d-flex flex-column">
+                <div class="mt-2">
+                  <span class="info-label">Mã Giáo Viên:</span>
+                  <span
+                    class="info-value">2251220254</span>
+                </div>
+                <div class="mt-2">
+                  <span class="info-label">Họ Và Tên:</span>
+                  <span class="info-value">Nguyễn Văn
+                    Tùng</span>
+                </div>
+                <div class="mt-2">
+                  <span class="info-label">Khoa:</span>
+                  <span
+                    class="info-value">Toán</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="listMarkContainer h-100 frameWork p-4">
+          <div class="row">
+            <div class="col-12">
+              <div
+                class="titleContainer d-flex align-items-center justify-content-between">
+                <div class="titleMark p-2">QUẢN LÝ</div>
+              </div>
+            </div>
+            <div class="col-12 mt-4">
+              <div class="btn btn-danger form-control ">
+                <a href="" class="noneA">NHẬP ĐIỂM</a>
+              </div>
+            </div>
+            <div class="col-12 mt-4">
+              <div class="btn btn-danger form-control">
+                <a href="{{route('manage-scores')}}" class="noneA">XEM DANH SÁCH SINH VIÊN</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section_1>
+  <section_2 class="m-5">
+    <div class="section_2 frameWork p-4">
+      <div class="row">
+        <div class="col-12">
+          <div class="titleSC">TIN TỨC</div>
+        </div>
+      </div>
+
+      <div class="row m-4">
+        <!-- First Column -->
+        <div class="col-md-6 d-flex flex-column align-items-center">
+          <img src="http://127.0.0.1:5500/a51ed193e0f66f8fda37bdcf4637cb53.jpg" alt="Image 1" class="img-fluid mb-3">
+          <p class="news-text">Về việc nộp hồ sơ xét giảm học phí học kỳ 1 năm học 2024 - 2025</p>
+        </div>
+
+        <!-- Second Column -->
+        <div class="col-md-6 d-flex flex-column align-items-center">
+          <img src="http://127.0.0.1:5500/a51ed193e0f66f8fda37bdcf4637cb53.jpg" alt="Image 2" class="img-fluid mb-3">
+          <p class="news-text">Danh sách sinh viên tốt nghiệp học kỳ 2 năm học 2023 - 2024</p>
+        </div>
+      </div>
+    </div>
+
+  </section_2>
+  <section_3 class="m-5">
+    <div class="section_2 frameWork p-4">
+      <div class="row">
+        <div class="col-12">
+          <div class="titleSC">HƯỚNG DẪN</div>
+        </div>
+      </div>
+
+      <div class="row m-4">
+        <!-- First Column -->
+        <div class="col-md-6 d-flex flex-column align-items-center">
+          <img src="http://127.0.0.1:5500/a51ed193e0f66f8fda37bdcf4637cb53.jpg" alt="Image 1" class="img-fluid mb-3">
+          <p class="news-text">Hướng dẫn thủ tục thanh toán ra trường và nhận bằng tốt nghiệp của sinh viên được công nhận tốt nghiệp năm 2024.</p>
+        </div>
+
+        <!-- Second Column -->
+        <div class="col-md-6 d-flex flex-column align-items-center">
+          <img src="http://127.0.0.1:5500/a51ed193e0f66f8fda37bdcf4637cb53.jpg" alt="Image 2" class="img-fluid mb-3">
+          <p class="news-text"> VIDEO - HƯỚNG DẪN SINH VIÊN TRA CỨU, ĐỀ XUẤT BIỂU MẪU TRỰC TUYẾN.</p>
+        </div>
+      </div>
+    </div>
+
+  </section_3>
+  <section_4 class="m-5">
+    <div class="section_2 frameWork p-4">
+      <div class="row">
+        <div class="col-12">
+          <div class="titleSC">QUY ĐỊNH</div>
+        </div>
+      </div>
+
+      <div class="row m-4">
+        <!-- First Column -->
+        <div class="col-md-6 d-flex flex-column align-items-center">
+          <img src="http://127.0.0.1:5500/a51ed193e0f66f8fda37bdcf4637cb53.jpg" alt="Image 1" class="img-fluid mb-3">
+          <p class="news-text">Ban hành Quy định về việc quy đổi chứng chỉ Ngoại ngữ và Tin học tương đương theo yêu cầu chuẩn đầu ra của Trường Đại học Kiến trúc Đà Nẵng.</p>
+        </div>
+
+        <!-- Second Column -->
+        <div class="col-md-6 d-flex flex-column align-items-center">
+          <img src="http://127.0.0.1:5500/a51ed193e0f66f8fda37bdcf4637cb53.jpg" alt="Image 2" class="img-fluid mb-3">
+          <p class="news-text">Quy định đánh giá kết quả học tập sinh viên.</p>
+        </div>
+      </div>
+    </div>
+
+  </section_4>
+
+
+</div>
+@endsection

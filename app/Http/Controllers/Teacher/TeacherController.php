@@ -1,28 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
-use App\Models\Contact;
-use App\Models\ContactReply;
-use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
-class UserController extends Controller
+class TeacherController extends Controller
 {
     public function index(){
         $logged_user = $this->logedInUser();
         $user = auth()->user();
-        $messages = [];
-        if ($user) {
-            $messages = $this->getMessage($user);
-        }
-        return view('User.user-profile',compact('logged_user', 'user', 'messages'));
+        return view('Teacher.teacher-index',compact('logged_user', 'user'));
     }
     public function logedInUser(){
         $user = auth()->user();
@@ -30,11 +22,7 @@ class UserController extends Controller
     }
     public function edit($id){
         $user = User::findOrFail($id);
-        $messages = [];
-        if ($user) {
-            $messages = $this->getMessage($user);
-        }
-        return view('User.user-update',compact('user', 'messages'));
+        return view('User.user-update',compact('user', ));
     }
     public function updateInforPost($id, Request $request)
 {
@@ -86,27 +74,25 @@ class UserController extends Controller
 
         $user = User::findOrFail($id);
         if (!$user) {
-            return redirect()->back()->with('error', 'User not found.');
+            return redirect()->back()->with('error', 'Không tìm thấy người dùng.');
         }
         if (!Hash::check($request->input('current-password'), $user->password)) {
-            return redirect()->back()->with('error', 'Current password is incorrect.');
+            return redirect()->back()->with('error', 'Mật khẩu hiện tại không đúng.');
         }
         $user->password = Hash::make($request->input('new-password'));
         $user->save();
 
-        return redirect()->route('user-profile',compact('id'))->with('success', 'Password updated successfully!');
+        return redirect()->route('user-profile',compact('id'))->with('success', 'Đã cập nhật mật khẩu thành công!');
     }
-    public function getMessage($user) {
-        $contacts = Contact::where('email', $user->email)->get();
-        if ($contacts->isEmpty()) {
-            return collect([]);
-        }
-        $contactIds = $contacts->pluck('id');
-        $messages = ContactReply::whereIn('contact_id', $contactIds)->get();
-        if ($messages->isEmpty()) {
-            return collect([]);
-        }
-
-        return $messages;
+    public function manage_scores(){
+        return view('Teacher.manage-score');
     }
+    public function teacher_profile($id){
+        $user = User::find($id);
+        if (!$user) {
+            return redirect()->back()->with('error', 'User không tồn tại!');
+        }
+        return view('User.user-profile', compact('user'));
+    }
+    
 }

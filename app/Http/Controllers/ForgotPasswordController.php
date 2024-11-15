@@ -22,10 +22,10 @@ class ForgotPasswordController extends Controller
 
         if($user){
             return redirect()->route('reset-password', ['email' => $validatedData['email']])
-                             ->with('success','Please update your password!');
+                             ->with('success','Vui lòng cập nhật mật khẩu của bạn!');
         }
 
-        return redirect()->back()->with('error','Account not found!');
+        return redirect()->back()->with('error','Không tìm thấy tài khoản!');
     }
 
 
