@@ -194,7 +194,54 @@ class TeacherController extends Controller
                              ->with('error', 'Không tìm thấy điểm cho môn học và kỳ thi này');
         }
     }
+    public function create_scores_get()
+{
+    $subjects = Subject::all();
+    $examTypes = ExamType::all();
+    $students = Student::with('user')->get();
+    $semesters = Semester::all();
+
+    return view('Teacher.create-scores-get', [
+        'subjects' => $subjects,
+        'examTypes' => $examTypes,
+        'students' => $students,
+        'semesters' => $semesters
+    ]);
     
+    }
+    public function create_scores_post(Request $request)
+{
+    $validator = Validator::make($request->all(), [
+        'std_id' => 'required|integer',
+        'semester_id' => 'required|integer',
+        'subject_id' => 'required|integer',
+        'exam_type_id' => 'required|integer',
+        'score' => 'required|numeric',
+    ]);
+
+    if ($validator->fails()) {
+        return redirect()->back()->withErrors($validator)->withInput();
+    }
+    $data = [
+        'student_id' => $request->input('std_id'),
+        'semester_id' => $request->input('semester_id'),
+        'subject_id' => $request->input('subject_id'),
+        'exam_type_id' => $request->input('exam_type_id'),
+    ];
+    $existingScore = Score::where($data)->first();
+
+    if ($existingScore) {
+        $existingScore->update(['score' => $request->input('score')]);
+        $message = 'Điểm đã được cập nhật thành công!';
+    } else {
+        $data['score'] = $request->input('score');
+        Score::create($data);
+        $message = 'Điểm đã được thêm thành công!';
+    }
+    return redirect()->route('manage-student-scores')->with('success', $message);
+}
+
+
     
 
 

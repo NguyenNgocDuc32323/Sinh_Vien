@@ -10,6 +10,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\Student\StudentController;
 use App\Http\Controllers\Teacher\TeacherController;
+use App\Models\Teacher;
 use Illuminate\Support\Facades\Route;
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get ('/login',[LoginController::class,'index'])->name('login');
@@ -49,6 +50,8 @@ Route::middleware(['auth','remember'])->group(function () {
     Route::post('/update-scores/{studentId}/{semesterId}', [TeacherController::class, 'show_selected_score'])->name('update-scores.submit');
     Route::post('/update-scores/{studentId}/{semesterId}/update', [TeacherController::class, 'update_score'])->name('update-scores.update');
     Route::get('/delete-scores/{studentId}/{semesterId}', [TeacherController::class, 'delete_scores_get'])->name('delete-scores');
+    Route::get('/create-scores-get',[TeacherController::class,'create_scores_get'])->name('create-scores-get');
+    Route::post('/create-scores-post',[TeacherController::class,'create_scores_post'])->name('create-scores-post');
     Route::get('/user-profile/{id}',[TeacherController::class,'teacher_profile'])->name('teacher-profile');
     Route::get('/logout',[LogoutController::class,'logout'])->name('logout');
 });

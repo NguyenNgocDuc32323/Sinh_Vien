@@ -80,7 +80,7 @@ Hồ Sơ Giáo Viên
               </div>
             </div>
             <div class="col-12 mt-4">
-              <a href="" class="btn btn-danger form-control ">NHẬP ĐIỂM</a>
+              <a href="{{route('create-scores-get')}}" class="btn btn-danger form-control ">NHẬP ĐIỂM</a>
             </div>
             <div class="col-12 mt-4">
               <a href="{{route('manage-student-scores')}}" class="btn btn-danger form-control">XEM DANH SÁCH SINH VIÊN</a>

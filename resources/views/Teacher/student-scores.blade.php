@@ -25,7 +25,10 @@ Hồ Sơ Giáo Viên
             <div class="col-12">
                 <div class="studentDetailContainer frameWork p-4">
                     <div class="students-scores semester">
-                        <h4 class="text-white">XEM ĐIỂM SỐ</h4>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h4 class="text-white">XEM ĐIỂM SỐ</h4>
+                            <a href="{{route('create-scores-get')}}" class="btn btn-warning text-white">Tạo Điểm Số</a>
+                        </div>
                         @foreach ($semesters as $semester)
                         <h4 class="text-center text-white mt-5 mb-3 fw-semibold">{{ $semester->name }}</h4>
                         <div style="overflow-x: auto; max-height: 500px;">

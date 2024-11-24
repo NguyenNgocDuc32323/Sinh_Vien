@@ -280,3 +280,11 @@ a.optionContainer p{
 .frameWork {
     margin-bottom: 6rem;
 }
+.mbt-6{
+    margin-bottom: 6rem;
+}
+.create-score-block .form-group label{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 0;
+}
