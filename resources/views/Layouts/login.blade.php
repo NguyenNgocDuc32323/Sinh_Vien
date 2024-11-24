@@ -30,10 +30,10 @@
                             <form method="POST" action="{{ route('login-post') }}" >
                                 @csrf
                                 <div class="form-group form-box">
-                                    <input type="email" name="email" class="form-control" placeholder="Email" required autocomplete="email">
+                                    <input type="text" name="code" class="form-control" placeholder="Code" required autocomplete="code">
                                 </div>
-                                @if ($errors->has('email'))
-                                    <span class='text-danger-login'>{{ $errors->first('email') }}</span>
+                                @if ($errors->has('code'))
+                                    <span class='text-danger-login'>{{ $errors->first('code') }}</span>
                                 @endif
                                 <div class="form-group form-box position-relative">
                                     <input type="password" name="password" class="form-control" placeholder="Mật Khẩu" required autocomplete="password">

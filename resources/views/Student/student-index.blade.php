@@ -4,20 +4,19 @@ Hồ Sơ Học Sinh
 @endsection
 @section('content')
 @if(session('success'))
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    toastr.success('{{ session('
-      success ') }}');
-  });
-</script>
-@endif
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            toastr.success('{{ session('success') }}');
+        });
+    </script>
+    @endif
 @if(session('error'))
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    toastr.error('{{ session('
-      error ') }}');
-  });
+    document.addEventListener('DOMContentLoaded', function() {
+        toastr.error('{{ session('error') }}');
+    });
 </script>
+@endif
 @endif
 <div id="demo_4" class="container">
   <div class="ProfileContainer mt-4">
@@ -30,7 +29,7 @@ Hồ Sơ Học Sinh
           <div class="col p-4">
             <div class="avatarContainer">
               <img
-                src="{{asset('images/Dashboard/student.webp')}}"
+                src="{{asset($user->avatar)}}"
                 class="avatar" alt>
             </div>
           </div>
@@ -39,30 +38,29 @@ Hồ Sơ Học Sinh
               <div class="mt-2">
                 <span class="info-label">MSSV:</span>
                 <span
-                  class="info-value">2251220254</span>
+                  class="info-value">{{ $user->student->student_code }}</span>
               </div>
               <div class="mt-2">
                 <span class="info-label">Họ
                   tên:</span>
-                <span class="info-value">Nguyễn Văn
-                  Tùng</span>
+                <span class="info-value">{{$user->name}}</span>
               </div>
               <div class="mt-2">
                 <span class="info-label">Giới tính
                   :</span>
-                <span class="info-value">Nam</span>
+                <span class="info-value">{{$user->gender}}</span>
               </div>
               <div class="mt-2">
                 <span class="info-label">Ngày sinh
                   :</span>
                 <span
-                  class="info-value">16/06/2004</span>
+                  class="info-value">{{$user->student->birth_day}}</span>
               </div>
               <div class="mt-2">
                 <span class="info-label">Nơi sinh
                   :</span>
                 <span
-                  class="info-value">Hà Tĩnh</span>
+                  class="info-value">{{$user->address}}</span>
               </div>
             </div>
           </div>
@@ -72,30 +70,29 @@ Hồ Sơ Học Sinh
                 <span class="info-label">Lớp học
                   :</span>
                 <span
-                  class="info-value">22A5C</span>
+                  class="info-value">{{$user->student->class->class_name}}</span>
               </div>
               <div class="mt-2">
                 <span class="info-label">Khoá
                   học:</span>
-                <span class="info-value">DHQG_HN</span>
+                <span class="info-value">{{$user->student->course->course_name}}</span>
               </div>
               <div class="mt-2">
                 <span class="info-label">Bậc đào
                   tạo:</span>
                 <span
-                  class="info-value">Đại học</span>
+                  class="info-value">{{$user->student->course->training_level}}</span>
               </div>
               <div class="mt-2">
                 <span class="info-label">Loại hình đào
                   tạo : </span>
                 <span
-                  class="info-value">Chính quy</span>
+                  class="info-value">{{$user->student->course->type}}</span>
               </div>
               <div class="mt-2">
                 <span class="info-label">Nghành :</span>
                 <span
-                  class="info-value">Công nghệ thông
-                  tin</span>
+                  class="info-value">{{$user->student->course->major}}</span>
               </div>
             </div>
           </div>
@@ -174,12 +171,12 @@ Hồ Sơ Học Sinh
         </div>
       </div>
       <div class="row h-100 w-100 listfunction">
-        <div class="col text-center pt-3 optionContainer">
+        <a href="{{route('student-scores')}}" class="col text-center pt-3 optionContainer">
           <div class="border rounded p-4 h-100" style="background-color: #f8f9fa;">
             <i class="fas fa-chart-bar" style="font-size: 2rem; color: #90caf9;"></i>
             <p class="mt-2">Kết quả học tập</p>
           </div>
-        </div>
+        </a>
         <!-- Ô 2 -->
         <div class="col text-center pt-3 optionContainer">
           <div class="border rounded p-4 h-100" style="background-color: #f8f9fa;">
@@ -251,13 +248,13 @@ Hồ Sơ Học Sinh
       <div class="row m-4">
         <!-- First Column -->
         <div class="col-md-6 d-flex flex-column align-items-center">
-          <img src="http://127.0.0.1:5500/a51ed193e0f66f8fda37bdcf4637cb53.jpg" alt="Image 1" class="img-fluid mb-3">
+          <img src="{{asset('images/Sinh_Vien/hoc_tap.png')}}" alt="Image 1" class="img-fluid mb-3">
           <p class="news-text">Về việc nộp hồ sơ xét giảm học phí học kỳ 1 năm học 2024 - 2025</p>
         </div>
 
         <!-- Second Column -->
         <div class="col-md-6 d-flex flex-column align-items-center">
-          <img src="http://127.0.0.1:5500/a51ed193e0f66f8fda37bdcf4637cb53.jpg" alt="Image 2" class="img-fluid mb-3">
+          <img src="{{asset('images/Sinh_Vien/hoc_tap.png')}}" alt="Image 2" class="img-fluid mb-3">
           <p class="news-text">Danh sách sinh viên tốt nghiệp học kỳ 2 năm học 2023 - 2024</p>
         </div>
       </div>
@@ -275,13 +272,13 @@ Hồ Sơ Học Sinh
       <div class="row m-4">
         <!-- First Column -->
         <div class="col-md-6 d-flex flex-column align-items-center">
-          <img src="http://127.0.0.1:5500/a51ed193e0f66f8fda37bdcf4637cb53.jpg" alt="Image 1" class="img-fluid mb-3">
+          <img src="{{asset('images/Sinh_Vien/hoc_tap.png')}}" alt="Image 1" class="img-fluid mb-3">
           <p class="news-text">Hướng dẫn thủ tục thanh toán ra trường và nhận bằng tốt nghiệp của sinh viên được công nhận tốt nghiệp năm 2024.</p>
         </div>
 
         <!-- Second Column -->
         <div class="col-md-6 d-flex flex-column align-items-center">
-          <img src="http://127.0.0.1:5500/a51ed193e0f66f8fda37bdcf4637cb53.jpg" alt="Image 2" class="img-fluid mb-3">
+          <img src="{{asset('images/Sinh_Vien/hoc_tap.png')}}" alt="Image 2" class="img-fluid mb-3">
           <p class="news-text"> VIDEO - HƯỚNG DẪN SINH VIÊN TRA CỨU, ĐỀ XUẤT BIỂU MẪU TRỰC TUYẾN.</p>
         </div>
       </div>
@@ -299,13 +296,13 @@ Hồ Sơ Học Sinh
       <div class="row m-4">
         <!-- First Column -->
         <div class="col-md-6 d-flex flex-column align-items-center">
-          <img src="http://127.0.0.1:5500/a51ed193e0f66f8fda37bdcf4637cb53.jpg" alt="Image 1" class="img-fluid mb-3">
+          <img src="{{asset('images/Sinh_Vien/hoc_tap.png')}}" alt="Image 1" class="img-fluid mb-3">
           <p class="news-text">Ban hành Quy định về việc quy đổi chứng chỉ Ngoại ngữ và Tin học tương đương theo yêu cầu chuẩn đầu ra của Trường Đại học Kiến trúc Đà Nẵng.</p>
         </div>
 
         <!-- Second Column -->
         <div class="col-md-6 d-flex flex-column align-items-center">
-          <img src="http://127.0.0.1:5500/a51ed193e0f66f8fda37bdcf4637cb53.jpg" alt="Image 2" class="img-fluid mb-3">
+          <img src="{{asset('images/Sinh_Vien/hoc_tap.png')}}" alt="Image 2" class="img-fluid mb-3">
           <p class="news-text">Quy định đánh giá kết quả học tập sinh viên.</p>
         </div>
       </div>

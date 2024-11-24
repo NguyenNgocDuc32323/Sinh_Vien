@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Student;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
@@ -94,5 +95,32 @@ class StudentController extends Controller
         }
         return view('User.user-update', compact('user'));
     }
+    public function manage_scores()
+    {
+        $user = auth()->user();
+        $student = $user->student;
+        $scores = DB::table('scores')
+            ->leftJoin('subjects', 'scores.subject_id', '=', 'subjects.id')
+            ->leftJoin('exam_types', 'scores.exam_type_id', '=', 'exam_types.id')
+            ->leftJoin('semesters', 'scores.semester_id', '=', 'semesters.id')
+            ->where('scores.student_id', $student->id)
+            ->select(
+                'subjects.name as subject_name',
+                'subjects.subject_code as subject_code',
+                'exam_types.id as exam_type_id',
+                'exam_types.name as exam_type_name',
+                'semesters.name as semester_name',
+                'scores.score'
+            )
+            ->orderBy('semesters.name')
+            ->orderBy('exam_types.id')
+            ->get()
+            ->groupBy('semester_name');
+
+    
+        return view('Student.manage-score', compact('scores'));
+    }
+    
+
     
 }

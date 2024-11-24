@@ -27,11 +27,14 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'remember_token',
         'role',
         'avatar',
         'phone',
         'address',
+        'gender'
     ];
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -51,4 +54,25 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($user) {
+            if ($user->password) {
+                $user->password = bcrypt($user->password);
+            }
+        });
+    }
+    public function teacher()
+    {
+        return $this->hasOne(Teacher::class, 'user_id', 'id');
+    }
+    public function student()
+    {
+        return $this->hasOne(Student::class); // Nếu mỗi User chỉ có một Student
+    }
+    public function admin(){
+        return $this->hasOne(Admin::class, 'user_id','id');
+    }
 }

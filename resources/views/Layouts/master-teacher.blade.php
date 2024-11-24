@@ -1,4 +1,4 @@
-@include('Layouts.header-teacher')
+@include('Layouts.header-student')
 <div class="layout-container">
     @include('layouts.navbar-student')
     <div class="shop-layout">

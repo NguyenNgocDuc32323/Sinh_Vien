@@ -1,3 +1,6 @@
+<?php 
+    $user = auth()->user();
+?>
 <header id="header">
     <div class="row headerContainer">
         <div class="col-3">
@@ -61,18 +64,18 @@
                 class="studentProfileContaienr w-100 h-100 d-flex align-items-center justify-content-end">
                 <div class="avatarContainer">
                     <div>
-                        <img src="{{asset('images/Dashboard/student.webp')}}" class="avatar" alt>
+                        <img src="{{asset($user->avatar)}}" class="avatar" alt>
                     </div>
                 </div>
                 <div class="dropdown">
                     <button class="btn borderNone" type="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <div class="studentName">
-                            Nguyễn Ngọc Đức
+                            {{$user->name}}
                         </div>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-student">
-                        <li><a class="dropdown-item" href="{{ route('student-profile', ['id' => 2]) }}">Chỉnh Sửa Thông Tin</a></li>
+                        <li><a class="dropdown-item" href="{{ route('student-profile', ['id' => $user->id]) }}">Chỉnh Sửa Thông Tin</a></li>
                         <li><a class="dropdown-item" href="{{route('logout')}}">Đăng
                                 xuất</a></li>
                     </ul>

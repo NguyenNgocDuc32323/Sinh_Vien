@@ -3,6 +3,13 @@
 namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
+use App\Models\Classes;
+use App\Models\Course;
+use App\Models\ExamType;
+use App\Models\Score;
+use App\Models\Semester;
+use App\Models\Student;
+use App\Models\Subject;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -84,9 +91,7 @@ class TeacherController extends Controller
 
         return redirect()->route('user-profile',compact('id'))->with('success', 'Đã cập nhật mật khẩu thành công!');
     }
-    public function manage_scores(){
-        return view('Teacher.manage-score');
-    }
+    
     public function teacher_profile($id){
         $user = User::find($id);
         if (!$user) {
@@ -94,5 +99,110 @@ class TeacherController extends Controller
         }
         return view('User.user-profile', compact('user'));
     }
+    public function student_scores()
+{
+    $semesters = Semester::all();
+    $subjects = Subject::all();
+    $exam_types = ExamType::all();
+    $students = Student::with('user')->get();
+
+    $studentScores = [];
+
+    foreach ($semesters as $semester) {
+        $scores = Score::where('semester_id', $semester->id)
+            ->with(['subject', 'exam_type', 'semester'])
+            ->get();
+
+        $studentScores[$semester->id] = []; // Điểm cho từng học kỳ
+
+        foreach ($students as $student) {
+            $studentScores[$semester->id][$student->id] = [
+                'name' => $student->user->name,
+                'scores' => []
+            ];
+
+            foreach ($scores as $score) {
+                if ($score->student_id == $student->id) {
+                    $subjectName = $score->subject->name;
+                    $examSymbol = $score->exam_type->exam_symbol;
+
+                    $studentScores[$semester->id][$student->id]['scores'][$subjectName][$examSymbol] = $score->score;
+                }
+            }
+        }
+    }
+
+    return view('Teacher.student-scores', [
+        'semesters' => $semesters,
+        'subjects' => $subjects,
+        'exam_types' => $exam_types,
+        'studentScores' => $studentScores
+    ]);
+    }
+    public function delete_scores_get($studentId, $semesterId)
+{
+    Score::where('student_id', $studentId)
+        ->where('semester_id', $semesterId)
+        ->delete();
+    session()->flash('success', 'Xóa điểm thành công.');
+    return redirect()->route('manage-student-scores');
+    }
+    public function update_scores($studentId, $semesterId)
+{
+    $scores = Score::where('student_id', $studentId)
+        ->where('semester_id', $semesterId)
+        ->with(['subject', 'exam_type'])
+        ->get();
+    $subjects = Subject::all();
+    $examTypes = ExamType::all();
+    return view('Teacher.update-scores', compact('scores', 'studentId', 'semesterId', 'subjects', 'examTypes'));
+}
+    public function show_selected_score(Request $request, $studentId, $semesterId)
+    {
+        $subjects = Subject::all();
+        $examTypes = ExamType::all();
+        $subjectId = $request->input('subject');
+        $examTypeId = $request->input('exam_type');
+
+        $selectedScore = Score::where('student_id', $studentId)
+            ->where('semester_id', $semesterId)
+            ->where('subject_id', $subjectId)
+            ->where('exam_type_id', $examTypeId)
+            ->first();
+        if (!$selectedScore) {
+            $selectedScore = null;
+        }
+        return view('Teacher.update-scores', compact('selectedScore', 'studentId', 'semesterId', 'subjects', 'examTypes'));
+    }
+    public function update_score(Request $request, $studentId, $semesterId)
+    {
+        $subjectId = $request->input('subject');
+        $examTypeId = $request->input('exam_type');
+        $newScore = $request->input('score');
+        $score = Score::where('student_id', $studentId)
+                      ->where('semester_id', $semesterId)
+                      ->where('subject_id', $subjectId)
+                      ->where('exam_type_id', $examTypeId)
+                      ->first();
+        if ($score) {
+            $score->score = $newScore;
+            $score->save();
+            return redirect()->route('manage-student-scores', ['studentId' => $studentId, 'semesterId' => $semesterId])
+                             ->with('success', 'Điểm đã được cập nhật thành công!');
+        } else {
+            return redirect()->route('manage-student-scores', ['studentId' => $studentId, 'semesterId' => $semesterId])
+                             ->with('error', 'Không tìm thấy điểm cho môn học và kỳ thi này');
+        }
+    }
     
+    
+
+
+
+
+
+
+
+
+
 }

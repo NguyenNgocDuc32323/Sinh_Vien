@@ -38,13 +38,17 @@ Route::middleware(['auth','remember'])->group(function () {
     //student
     Route::get('student-index/{id}',[StudentController::class, 'index'])->name('student-index');
     Route::get('/student-profile/{id}',[StudentController::class, 'student_profile'])->name('student-profile');
-
+    Route::get('/student-scores',[StudentController::class,'manage_scores'])->name('student-scores');
     Route::get('/user-profile-edit/{id}',[StudentController::class,'edit'])->name('user-profile-edit');
     Route::post('/user-profile-edit-post/{id}',action: [StudentController::class,'updateInforPost'])->name('user-profile-edit-post');
     Route::post('/user-edit-password-post/{id}',[StudentController::class,'updatePasswordPost'])->name('user-edit-password-post');
     //teacher
     Route::get('/teacher-index/{id}',[TeacherController::class,'index'])->name('teacher-index');
-    Route::get('/manage-scores',[TeacherController::class,'manage_scores'])->name('manage-scores');
+    Route::get('/manage-student-scores',[TeacherController::class,'student_scores'])->name('manage-student-scores');
+    Route::get('/update-scores/{studentId}/{semesterId}',[TeacherController::class,'update_scores'])->name('update-scores');
+    Route::post('/update-scores/{studentId}/{semesterId}', [TeacherController::class, 'show_selected_score'])->name('update-scores.submit');
+    Route::post('/update-scores/{studentId}/{semesterId}/update', [TeacherController::class, 'update_score'])->name('update-scores.update');
+    Route::get('/delete-scores/{studentId}/{semesterId}', [TeacherController::class, 'delete_scores_get'])->name('delete-scores');
     Route::get('/user-profile/{id}',[TeacherController::class,'teacher_profile'])->name('teacher-profile');
     Route::get('/logout',[LogoutController::class,'logout'])->name('logout');
 });

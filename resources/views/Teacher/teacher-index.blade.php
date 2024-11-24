@@ -1,22 +1,26 @@
+<?php
+
+use App\Models\Subject;
+
+$subject = Subject::find($user->teacher->subject_id);
+?>
 @extends('Layouts.master-teacher')
 @section('page_title')
 Hồ Sơ Giáo Viên
 @endsection
 @section('content')
 @if(session('success'))
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    toastr.success('{{ session('
-      success ') }}');
-  });
-</script>
-@endif
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            toastr.success('{{ session('success') }}');
+        });
+    </script>
+    @endif
 @if(session('error'))
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    toastr.error('{{ session('
-      error ') }}');
-  });
+    document.addEventListener('DOMContentLoaded', function() {
+        toastr.error('{{ session('error') }}');
+    });
 </script>
 @endif
 <div id="demo_2">
@@ -46,17 +50,20 @@ Hồ Sơ Giáo Viên
                 <div class="mt-2">
                   <span class="info-label">Mã Giáo Viên:</span>
                   <span
-                    class="info-value">2251220254</span>
+                    class="info-value">{{$user->teacher->teacher_code}}</span>
                 </div>
                 <div class="mt-2">
                   <span class="info-label">Họ Và Tên:</span>
-                  <span class="info-value">Nguyễn Văn
-                    Tùng</span>
+                  <span class="info-value">{{$user->name}}</span>
                 </div>
                 <div class="mt-2">
-                  <span class="info-label">Khoa:</span>
+                  <span class="info-label">Giáo Viên Môn:</span>
+                  @if($subject)
                   <span
-                    class="info-value">Toán</span>
+                    class="info-value">{{$subject->name}}</span>
+                  @endif
+
+
                 </div>
               </div>
             </div>
@@ -73,14 +80,10 @@ Hồ Sơ Giáo Viên
               </div>
             </div>
             <div class="col-12 mt-4">
-              <div class="btn btn-danger form-control ">
-                <a href="" class="noneA">NHẬP ĐIỂM</a>
-              </div>
+              <a href="" class="btn btn-danger form-control ">NHẬP ĐIỂM</a>
             </div>
             <div class="col-12 mt-4">
-              <div class="btn btn-danger form-control">
-                <a href="{{route('manage-scores')}}" class="noneA">XEM DANH SÁCH SINH VIÊN</a>
-              </div>
+              <a href="{{route('manage-student-scores')}}" class="btn btn-danger form-control">XEM DANH SÁCH SINH VIÊN</a>
             </div>
           </div>
         </div>
@@ -97,14 +100,14 @@ Hồ Sơ Giáo Viên
 
       <div class="row m-4">
         <!-- First Column -->
-        <div class="col-md-6 d-flex flex-column align-items-center">
-          <img src="http://127.0.0.1:5500/a51ed193e0f66f8fda37bdcf4637cb53.jpg" alt="Image 1" class="img-fluid mb-3">
+        <div class="col-md-6 d-flex flex-column align-items-center teacher-ads-img">
+          <img src="{{asset('images/Sinh_Vien/hoc_tap.png')}}" alt="Image 1" class="img-fluid mb-3">
           <p class="news-text">Về việc nộp hồ sơ xét giảm học phí học kỳ 1 năm học 2024 - 2025</p>
         </div>
 
         <!-- Second Column -->
-        <div class="col-md-6 d-flex flex-column align-items-center">
-          <img src="http://127.0.0.1:5500/a51ed193e0f66f8fda37bdcf4637cb53.jpg" alt="Image 2" class="img-fluid mb-3">
+        <div class="col-md-6 d-flex flex-column align-items-center teacher-ads-img">
+          <img src="{{asset('images/Sinh_Vien/hoc_tap.png')}}" alt="Image 2" class="img-fluid mb-3">
           <p class="news-text">Danh sách sinh viên tốt nghiệp học kỳ 2 năm học 2023 - 2024</p>
         </div>
       </div>
@@ -121,14 +124,14 @@ Hồ Sơ Giáo Viên
 
       <div class="row m-4">
         <!-- First Column -->
-        <div class="col-md-6 d-flex flex-column align-items-center">
-          <img src="http://127.0.0.1:5500/a51ed193e0f66f8fda37bdcf4637cb53.jpg" alt="Image 1" class="img-fluid mb-3">
+        <div class="col-md-6 d-flex flex-column align-items-center teacher-ads-img">
+          <img src="{{asset('images/Sinh_Vien/hoc_tap.png')}}" alt="Image 1" class="img-fluid mb-3">
           <p class="news-text">Hướng dẫn thủ tục thanh toán ra trường và nhận bằng tốt nghiệp của sinh viên được công nhận tốt nghiệp năm 2024.</p>
         </div>
 
         <!-- Second Column -->
-        <div class="col-md-6 d-flex flex-column align-items-center">
-          <img src="http://127.0.0.1:5500/a51ed193e0f66f8fda37bdcf4637cb53.jpg" alt="Image 2" class="img-fluid mb-3">
+        <div class="col-md-6 d-flex flex-column align-items-center teacher-ads-img">
+          <img src="{{asset('images/Sinh_Vien/hoc_tap.png')}}" alt="Image 2" class="img-fluid mb-3">
           <p class="news-text"> VIDEO - HƯỚNG DẪN SINH VIÊN TRA CỨU, ĐỀ XUẤT BIỂU MẪU TRỰC TUYẾN.</p>
         </div>
       </div>
@@ -145,14 +148,14 @@ Hồ Sơ Giáo Viên
 
       <div class="row m-4">
         <!-- First Column -->
-        <div class="col-md-6 d-flex flex-column align-items-center">
-          <img src="http://127.0.0.1:5500/a51ed193e0f66f8fda37bdcf4637cb53.jpg" alt="Image 1" class="img-fluid mb-3">
+        <div class="col-md-6 d-flex flex-column align-items-center teacher-ads-img">
+          <img src="{{asset('images/Sinh_Vien/hoc_tap.png')}}" alt="Image 1" class="img-fluid mb-3">
           <p class="news-text">Ban hành Quy định về việc quy đổi chứng chỉ Ngoại ngữ và Tin học tương đương theo yêu cầu chuẩn đầu ra của Trường Đại học Kiến trúc Đà Nẵng.</p>
         </div>
 
         <!-- Second Column -->
-        <div class="col-md-6 d-flex flex-column align-items-center">
-          <img src="http://127.0.0.1:5500/a51ed193e0f66f8fda37bdcf4637cb53.jpg" alt="Image 2" class="img-fluid mb-3">
+        <div class="col-md-6 d-flex flex-column align-items-center teacher-ads-img">
+          <img src="{{asset('images/Sinh_Vien/hoc_tap.png')}}" alt="Image 2" class="img-fluid mb-3">
           <p class="news-text">Quy định đánh giá kết quả học tập sinh viên.</p>
         </div>
       </div>

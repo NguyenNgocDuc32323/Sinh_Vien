@@ -129,6 +129,12 @@
 .optionContainer{
     height: 200px;
 }
+a.optionContainer{
+    text-decoration: none !important;
+}
+a.optionContainer p{
+    color: #333;
+}
  .moreDetails{
     color: rgb(0, 0, 255);
     font-weight: 500;
@@ -198,7 +204,7 @@
  .optionContainer i{
     margin-bottom: 15px;
  }
- .demo_4{
+ #demo_4{
     margin-bottom: 6rem;
  }
 .demo_2{
@@ -258,4 +264,19 @@
 .dropdown-menu-student li{
     margin: 5px 0;
     font-size: 18px;
+}
+.score-text{
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+    padding: 15px;
+    text-align: center;
+    font-size: 30px;
+}
+.teacher-ads-img img{
+    width: 500px;
+    padding-bottom: 20px;
+}
+.frameWork {
+    margin-bottom: 6rem;
 }
