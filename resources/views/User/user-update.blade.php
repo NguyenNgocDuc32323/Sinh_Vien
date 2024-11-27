@@ -52,7 +52,7 @@
                                     @csrf
                                     <div class="form-group mb-3">
                                         <label for="name">Họ Và Tên</label>
-                                        <input type="text" class="form-control" id="name" name="name" value="{{$user->username}}">
+                                        <input type="text" class="form-control" id="name" name="name" value="{{$user->name}}">
                                         @if ($errors->has('name'))
                                             <span class='text-danger-login'>{{ $errors->first('name') }}</span>
                                         @endif

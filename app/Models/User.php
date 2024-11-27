@@ -57,13 +57,8 @@ class User extends Authenticatable
     public static function boot()
     {
         parent::boot();
-
-        static::creating(function ($user) {
-            if ($user->password) {
-                $user->password = bcrypt($user->password);
-            }
-        });
     }
+
     public function teacher()
     {
         return $this->hasOne(Teacher::class, 'user_id', 'id');

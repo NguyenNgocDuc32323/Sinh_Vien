@@ -17,7 +17,6 @@ Hồ Sơ Học Sinh
     });
 </script>
 @endif
-@endif
 <div id="demo_4" class="container">
   <div class="ProfileContainer mt-4">
     <div class="row">

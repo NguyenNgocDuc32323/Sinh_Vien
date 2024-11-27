@@ -15,19 +15,23 @@ class ResetPasswordController extends Controller
         ]);
     }
     public function resetPassword(Request $request)
-    {
-        $validatedData = $request->validate([
-            'email' => 'required|email',
-            'password' => 'required|min:8',
-            'confirm_password' => 'required|same:password',
-        ]);
-        $user = User::where('email', $validatedData['email'])->first();
-        if ($user) {
-            $user->password = Hash::make($validatedData['password']);
-            $user->save();
-            return redirect()->route('login')->with('success', 'Đã cập nhật mật khẩu thành công!');
-        }
-        return redirect()->back()->with('error', 'Cập nhật mật khẩu không thành công!');
+{
+    $validatedData = $request->validate([
+        'email' => 'required|email',
+        'password' => 'required|min:8',
+        'confirm_password' => 'required|same:password',
+    ]);
+
+    $user = User::where('email', $validatedData['email'])->first();
+    if ($user) {
+        // Mã hóa mật khẩu bằng sha1
+        $user->password = sha1($validatedData['password']);
+        $user->save();
+        return redirect()->route('login')->with('success', 'Đã cập nhật mật khẩu thành công!');
     }
+    
+    return redirect()->back()->with('error', 'Cập nhật mật khẩu không thành công!');
+}
+
 
 }

@@ -37,7 +37,7 @@ class StudentController extends Controller
     if (!$user) {
         return redirect()->back()->with('error', 'User not found.');
     }
-    $user->username = $request->input('name');
+    $user->name = $request->input('name');
     $user->email = $request->input('email');
     $user->phone = $request->input('phone');
     $user->address = $request->input('address');
@@ -53,7 +53,7 @@ class StudentController extends Controller
     }
     $check_update = $user->save();
     if ($check_update) {
-        return redirect()->route('user-profile',compact('id'))->with('success', 'Update information successfully!');
+        return redirect()->route('student-profile',compact('id'))->with('success', 'Update information successfully!');
     } else {
         return redirect()->back()->with('error', 'Update user information failed!');
     }

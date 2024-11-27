@@ -15,7 +15,7 @@
         <div class="dropdown">
             <button class="d-flex justify-content-center align-items-center rounded-circle" type="button"
                 data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="{{asset('images/Dashboard/admin.png')}}" alt="image"
+                <img src="{{asset($user->avatar)}}" alt="image"
                     class="user-image object-fit-cover rounded-circle">
             </button>
             <div class="dropdown-menu to-top dropdown-menu-sm">
@@ -41,3 +41,14 @@
         </div>
     </div>
 </nav>
+@push('custom-scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    var dropdownButton = document.querySelector('[data-bs-toggle="dropdown"]');
+    if (dropdownButton) {
+        var dropdown = new bootstrap.Dropdown(dropdownButton);
+    }
+});
+
+    </script>
+@endpush

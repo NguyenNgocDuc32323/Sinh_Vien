@@ -1,5 +1,7 @@
 <?php
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\Teacher\ManagerTeacherController;
+use App\Http\Controllers\Admin\Teacher\TeacherController as TeacherTeacherController;
 use App\Http\Controllers\Admin\User\ManageUserController;
 use App\Http\Controllers\Admin\User\UpdateUserController;
 use App\Http\Controllers\ForgotPasswordController;
@@ -33,7 +35,24 @@ Route::prefix('admin')->middleware('admin')->group(function(){
     Route::get('/update-user/{id}',[UpdateUserController::class,'updateInfor'])->name('update-user');
     Route::post('/update-user/{id}',[UpdateUserController::class,'updateInforPost'])->name('update-user-post');
     Route::post('/update-password/{id}', [UpdateUserController::class, 'updatePassword'])->name('update-password');
-    
+    //student
+    Route::get('/delete-student/{id}',[AdminController::class,'delete_student'])->name('delete-student');
+    Route::get('/create-student',[AdminController::class,'create_student'])->name('create-student');
+    Route::post('/create-student-post',[AdminController::class,'create_student_post'])->name('create-student-post');
+    Route::get('/update-student/{id}',[AdminController::class,'update_student'])->name('update-student');
+    Route::post('/update-student-post/{id}',[AdminController::class,'update_student_post'])->name('update-student-post');
+    Route::post('/student-update-password/{id}',[AdminController::class,'updatePasswordPost'])->name('student-update-password');
+    Route::get('/student-search',[AdminController::class,'student_search'])->name('student-search');
+    Route::post('/update-password-student/{id}',[AdminController::class,'updatePassword'])->name('update-password-student');
+    //teacher
+    Route::get('/manage-teacher',[ManagerTeacherController::class,'index'])->name('manage-teacher');
+    Route::get('/teacher-search',[ManagerTeacherController::class,'teacher_search'])->name('teacher-search');
+    Route::get('/delete-teacher/{id}',[ManagerTeacherController::class,'delete_teacher'])->name('delete-teacher');
+    Route::get('/create-teacher',[ManagerTeacherController::class,'create_teacher'])->name('create-teacher');
+    Route::post('/create-teacher-post',[ManagerTeacherController::class,'create_teacher_post'])->name('create-teacher-post');
+    Route::get('/update-teacher/{id}',[ManagerTeacherController::class,'update_teacher'])->name('update-teacher');
+    Route::post('/update-teacher-post/{id}',[ManagerTeacherController::class,'update_teacher_post'])->name('update-teacher-post');
+    Route::post('/update-teacher-password/{id}',[ManagerTeacherController::class,'updatePassword'])->name('update-teacher-password');
 });
 Route::middleware(['auth','remember'])->group(function () {
     //student

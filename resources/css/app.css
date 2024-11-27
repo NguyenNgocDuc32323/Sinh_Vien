@@ -16,8 +16,11 @@ body{
 .toast-top-center {
     padding-top: 15px;
     position: fixed;
-    background-color: #fff;
+    background-color: transparent;
     height: 6rem;
+    z-index: 10000000;
+    opacity: 1;
+    
 }
 .shop-layout{
     overflow: hidden;

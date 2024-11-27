@@ -29,7 +29,7 @@
                                         <a href="{{ route('admin') }}" class="btn btn-index bd-logout ms-2">Quản Trị</a>
                                         @elseif($user->role == 'student')
                                         <a href="{{ route('student-profile', ['id' => $user->id]) }}" class="btn btn-index bd-logout ms-2">Trang Cá Nhân</a>
-                                        <a href="{{ route('student-scores') }}" class="btn btn-index bd-logout ms-2">Quản Lý Điểm</a>
+                                        <a href="{{ route('student-index',[$user->id]) }}" class="btn btn-index bd-logout ms-2">Quản Lý Điểm</a>
                                         @elseif($user->role == 'teacher')
                                         <a href="{{ route('student-profile', ['id' => $user->id]) }}" class="btn btn-index bd-logout ms-2">Trang Cá Nhân</a>
                                         <a href="{{ route('manage-student-scores') }}" class="btn btn-index bd-logout ms-2">Điểm Học Sinh</a>
